@@ -1,0 +1,16 @@
+
+
+BULLET HELL GAME::
+
+1st long therm goals:
+-------------------------------
+	Moving player;  <<---- CURRENT TASK
+	Spawning enemies;
+	Moving enemies;
+	Spawning bullets (simple);
+	Moving bullets;
+-------------------------------
+
+	
+
+	
