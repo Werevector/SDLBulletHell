@@ -1,26 +1,25 @@
-﻿Build started 25.10.2014 14:09:36.
-     1>Project "R:\Programmering\C++ workspace\BulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
+﻿Build started 25.10.2014 15:22:14.
+     1>Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\BulletHell.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         R:\Programmering\Visual Studio 2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Player.cpp
-         Player.cpp
-     1>r:\programmering\c++ workspace\bullethell\bullethell\player.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         R:\Programmering\Visual Studio 2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
        Link:
-         R:\Programmering\Visual Studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"R:\Programmering\C++ workspace\BulletHell\Debug\BulletHell.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BulletHell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"R:\Programmering\C++ workspace\BulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"R:\Programmering\C++ workspace\BulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
+         R:\Programmering\Visual Studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BulletHell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
          Debug\Enemy.obj
          Debug\Main.obj
          Debug\Player.obj
-         LINK : R:\Programmering\C++ workspace\BulletHell\Debug\BulletHell.exe not found or not built by the last incremental link; performing full link
+         LINK : R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe not found or not built by the last incremental link; performing full link
      1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
-         BulletHell.vcxproj -> R:\Programmering\C++ workspace\BulletHell\Debug\BulletHell.exe
+         BulletHell.vcxproj -> R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"R:\Programmering\C++ workspace\BulletHell\Debug\BulletHell.exe;#1" /manifest Debug\BulletHell.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe;#1" /manifest Debug\BulletHell.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\BulletHell.unsuccessfulbuild".
          Touching "Debug\BulletHell.lastbuildstate".
-     1>Done Building Project "R:\Programmering\C++ workspace\BulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
+     1>Done Building Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.52
+Time Elapsed 00:00:00.57

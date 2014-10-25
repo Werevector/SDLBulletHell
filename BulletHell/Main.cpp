@@ -75,24 +75,24 @@ int main( int argc, char* args[] ) {
 			{
 				quit = true;
 			}
-			if(event.type == SDL_KEYDOWN){
+			else if(event.type == SDL_KEYDOWN){
 				switch(event.key.keysym.sym){
-					case SDLK_UP:
+					case SDLK_w:
 					playerAction = Player::moveUpp;
 					cout << "eventUpp";
 					break;
 				
-					case SDLK_DOWN:
+					case SDLK_s:
 					playerAction = Player::moveDown;
 					cout << "eventDown";
 					break;
 
-					case SDLK_LEFT:
+					case SDLK_a:
 					playerAction = Player::moveLeft;
 					cout << "eventLeft";
 					break;
 
-					case SDLK_RIGHT:
+					case SDLK_d:
 					playerAction = Player::moveRight;
 					cout << "eventRight";
 					break;
@@ -104,11 +104,12 @@ int main( int argc, char* args[] ) {
 			}
 
 		player.handleMovement(playerAction);
+		playerAction = Player::idle;
 		
 		int SDL_WaitEvent(SDL_Event *event);
 
 		//Clear screen
-		SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+		SDL_SetRenderDrawColor( gRenderer, 0x00, 0x00, 0x00, 0xFF );
 		SDL_RenderClear( gRenderer );
 
 		player.renderPlayer( gRenderer );
