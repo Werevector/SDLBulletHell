@@ -102,6 +102,7 @@ int main( int argc, char* args[] ) {
 					break;
 				}
 			}
+		}//EventWhile
 
 		player.handleMovement(playerAction);
 		playerAction = Player::idle;
@@ -118,7 +119,7 @@ int main( int argc, char* args[] ) {
 		//Update screen
 		SDL_RenderPresent( gRenderer );
 		
-		}//EventWhile
+		
 
 	}//NotQuitwhile
 
