@@ -1,5 +1,6 @@
 #include "SDL.h"
 #include <iostream>
+#include "Graphics.h"
 
 class Player {
 
@@ -11,6 +12,8 @@ private:
 	SDL_Rect hitbox;
 	int hitboxSize; //side size
 	void resetFlags();
+	void renderPlayer();
+	void handleMovement(float deltaTime);
 
 public:
 	
@@ -20,9 +23,8 @@ public:
 	bool mLeft;
 	bool mRight;
 
-	void renderPlayer(SDL_Renderer *renderer);
-	void handleMovement(float deltaTime, int SCREEN_WIDTH, int SCREEN_HEIGHT);
+	void update(float deltaTime);
 	Player();
-
+	void draw();
 
 };

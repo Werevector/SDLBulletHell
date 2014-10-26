@@ -13,13 +13,18 @@ Player::Player(){
 	hitbox.w = hitboxSize;
 }
 
-void Player::handleMovement(float deltaTime, int SCREEN_WIDTH, int SCREEN_HEIGHT) {
+void Player::update(float deltaTime){
+	handleMovement(deltaTime);
+}
+
+void Player::handleMovement(float deltaTime) {
 	
+
 	if(mUpp && hitbox.y > 0){
 		playerPositionY -= (0.1/deltaTime);
 		hitbox.y = playerPositionY;
 		printf("moveUpp\n");
-	}else if(mDown && hitbox.y < (SCREEN_HEIGHT - hitbox.h)){
+	}else if(mDown && hitbox.y < (Graphics::SCREEN_HEIGHT - hitbox.h)){
 		playerPositionY += (0.1/deltaTime);
 		hitbox.y = playerPositionY;
 		printf("moveDown\n");
@@ -29,7 +34,7 @@ void Player::handleMovement(float deltaTime, int SCREEN_WIDTH, int SCREEN_HEIGHT
 		playerPositionX -= (0.1/deltaTime);
 		hitbox.x = playerPositionX;
 		printf("moveLeft\n");
-	}else if(mRight && hitbox.x < (SCREEN_WIDTH - hitbox.h)){
+	}else if(mRight && hitbox.x < (Graphics::SCREEN_WIDTH - hitbox.h)){
 		playerPositionX += (0.1/deltaTime);
 		hitbox.x = playerPositionX;
 		printf("moveRight\n");
@@ -39,9 +44,13 @@ void Player::handleMovement(float deltaTime, int SCREEN_WIDTH, int SCREEN_HEIGHT
 	
 }
 
-void Player::renderPlayer(SDL_Renderer *renderer){
-	SDL_SetRenderDrawColor( renderer, 0xFF, 0x00, 0x00, 0xFF ); 
-	SDL_RenderFillRect( renderer, &hitbox );
+void Player::draw(){
+	renderPlayer();
+}
+
+void Player::renderPlayer(){
+	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
+	SDL_RenderFillRect( Graphics::gRenderer, &hitbox );
 }
 
 void Player::resetFlags(){
