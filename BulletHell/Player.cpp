@@ -16,25 +16,25 @@ Player::Player(){
 void Player::handleMovement(Action playeract) {
 	switch(playeract){
 		case moveUpp:
-		playerPositionY -= 3;
+		playerPositionY -= 1;
 		hitbox.y = playerPositionY;
 		std::cout << "moveUpp";
 		break;
 
 		case moveDown:
-		playerPositionY += 3;
+		playerPositionY += 1;
 		hitbox.y = playerPositionY;
 		std::cout << "moveDown";
 		break;
 
 		case moveLeft:
-		playerPositionX -= 3;
+		playerPositionX -= 1;
 		hitbox.x = playerPositionX;
 		std::cout << "moveLeft";
 		break;
 
 		case moveRight:
-		playerPositionX += 3;
+		playerPositionX += 1;
 		hitbox.x = playerPositionX;
 		std::cout << "moveRight";
 		break;

@@ -69,45 +69,32 @@ int main( int argc, char* args[] ) {
 	//Start logic loop
 	while( !quit )
 	{
-		while( SDL_PollEvent( &event ) != 0 )
-		{
+		while( SDL_PollEvent( &event ) != 0 ){
 			if( event.type == SDL_QUIT )
 			{
 				quit = true;
 			}
-			else if(event.type == SDL_KEYDOWN){
-				switch(event.key.keysym.sym){
-					case SDLK_w:
-					playerAction = Player::moveUpp;
-					cout << "eventUpp";
-					break;
-				
-					case SDLK_s:
-					playerAction = Player::moveDown;
-					cout << "eventDown";
-					break;
 
-					case SDLK_a:
-					playerAction = Player::moveLeft;
-					cout << "eventLeft";
-					break;
-
-					case SDLK_d:
-					playerAction = Player::moveRight;
-					cout << "eventRight";
-					break;
-
-					default:
-					playerAction = Player::idle;
-					break;
-				}
-			}
 		}//EventWhile
 
-		player.handleMovement(playerAction);
-		playerAction = Player::idle;
+		const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
+
+		if(currentKeyStates[ SDL_SCANCODE_UP ]){
+			playerAction = Player::moveUpp;
+		}else if (currentKeyStates[ SDL_SCANCODE_DOWN ]){
+			playerAction = Player::moveDown;
+		}else if (currentKeyStates[ SDL_SCANCODE_LEFT ]){
+			playerAction = Player::moveLeft;
+		}else if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
+			playerAction = Player::moveRight;
+		}else{
+			playerAction = Player::idle;
+		}
 		
-		int SDL_WaitEvent(SDL_Event *event);
+		player.handleMovement(playerAction);
+		//playerAction = Player::idle;
+		
+		//int SDL_WaitEvent(SDL_Event *event);
 
 		//Clear screen
 		SDL_SetRenderDrawColor( gRenderer, 0x00, 0x00, 0x00, 0xFF );
