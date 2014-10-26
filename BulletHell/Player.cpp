@@ -5,7 +5,7 @@ Player::Player(){
 	playerPositionX = 60;
 	playerPositionY = 60;
 	
-	hitboxSize = 10;
+	hitboxSize = 45;
 	
 	hitbox.x = playerPositionX;
 	hitbox.y = playerPositionY;
@@ -13,35 +13,30 @@ Player::Player(){
 	hitbox.w = hitboxSize;
 }
 
-void Player::handleMovement(Action playeract) {
-	switch(playeract){
-		case moveUpp:
-		playerPositionY -= 1;
+void Player::handleMovement(float deltaTime, int SCREEN_WIDTH, int SCREEN_HEIGHT) {
+	
+	if(mUpp && hitbox.y > 0){
+		playerPositionY -= (0.1/deltaTime);
 		hitbox.y = playerPositionY;
-		std::cout << "moveUpp";
-		break;
-
-		case moveDown:
-		playerPositionY += 1;
+		printf("moveUpp\n");
+	}else if(mDown && hitbox.y < (SCREEN_HEIGHT - hitbox.h)){
+		playerPositionY += (0.1/deltaTime);
 		hitbox.y = playerPositionY;
-		std::cout << "moveDown";
-		break;
-
-		case moveLeft:
-		playerPositionX -= 1;
-		hitbox.x = playerPositionX;
-		std::cout << "moveLeft";
-		break;
-
-		case moveRight:
-		playerPositionX += 1;
-		hitbox.x = playerPositionX;
-		std::cout << "moveRight";
-		break;
-
-		case idle:
-		break;
+		printf("moveDown\n");
 	}
+	
+	if(mLeft && hitbox.x > 0){
+		playerPositionX -= (0.1/deltaTime);
+		hitbox.x = playerPositionX;
+		printf("moveLeft\n");
+	}else if(mRight && hitbox.x < (SCREEN_WIDTH - hitbox.h)){
+		playerPositionX += (0.1/deltaTime);
+		hitbox.x = playerPositionX;
+		printf("moveRight\n");
+	}
+	
+	resetFlags();
+	
 }
 
 void Player::renderPlayer(SDL_Renderer *renderer){
@@ -49,3 +44,9 @@ void Player::renderPlayer(SDL_Renderer *renderer){
 	SDL_RenderFillRect( renderer, &hitbox );
 }
 
+void Player::resetFlags(){
+	mUpp=false;
+	mDown=false;
+	mLeft=false;
+	mRight=false;
+}

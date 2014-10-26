@@ -10,21 +10,18 @@ private:
 
 	SDL_Rect hitbox;
 	int hitboxSize; //side size
+	void resetFlags();
 
 public:
 	
-	enum Action{
-		//shoot not implemented yet
-		idle,
-		moveUpp,
-		moveDown,
-		moveLeft,
-		moveRight
-
-	};
+	//keypress flags
+	bool mUpp;
+	bool mDown;
+	bool mLeft;
+	bool mRight;
 
 	void renderPlayer(SDL_Renderer *renderer);
-	void handleMovement(Action playeract);
+	void handleMovement(float deltaTime, int SCREEN_WIDTH, int SCREEN_HEIGHT);
 	Player();
 
 

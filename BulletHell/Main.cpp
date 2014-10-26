@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include <string>
 #include "Player.h"
+#include "GameTimer.h"
 
 
 using namespace std;
@@ -16,7 +17,8 @@ bool loadMedia();
 void close();
 
 Player player;
-Player::Action playerAction;
+
+GameTimer gTimer;
 
 
 //SDL_Texture* loadTexture( std::string path );
@@ -30,7 +32,7 @@ void init()
 	SDL_Init( SDL_INIT_VIDEO );
 	SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" );
 	gWindow = SDL_CreateWindow( "BulletHell", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-	gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
+	gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
 	SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
 }
 
@@ -64,6 +66,7 @@ int main( int argc, char* args[] ) {
 	loadMedia();
 	bool quit = false;
 	SDL_Event event;
+	gTimer.Reset();
 
 
 	//Start logic loop
@@ -77,24 +80,28 @@ int main( int argc, char* args[] ) {
 
 		}//EventWhile
 
+
+
 		const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
 
 		if(currentKeyStates[ SDL_SCANCODE_UP ]){
-			playerAction = Player::moveUpp;
+			player.mUpp = true;
 		}else if (currentKeyStates[ SDL_SCANCODE_DOWN ]){
-			playerAction = Player::moveDown;
-		}else if (currentKeyStates[ SDL_SCANCODE_LEFT ]){
-			playerAction = Player::moveLeft;
-		}else if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
-			playerAction = Player::moveRight;
-		}else{
-			playerAction = Player::idle;
+			player.mDown = true;
 		}
 		
-		player.handleMovement(playerAction);
+		if (currentKeyStates[ SDL_SCANCODE_LEFT ]){
+			player.mLeft = true;
+		}else if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
+			player.mRight = true;
+		}
+		
+		player.handleMovement(gTimer.DeltaTime(), SCREEN_WIDTH, SCREEN_HEIGHT);
 		//playerAction = Player::idle;
 		
 		//int SDL_WaitEvent(SDL_Event *event);
+
+		gTimer.Tick();
 
 		//Clear screen
 		SDL_SetRenderDrawColor( gRenderer, 0x00, 0x00, 0x00, 0xFF );
