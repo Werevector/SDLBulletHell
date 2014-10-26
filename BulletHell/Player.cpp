@@ -5,7 +5,7 @@ Player::Player(){
 	playerPositionX = 60;
 	playerPositionY = 60;
 	
-	hitboxSize = 45;
+	hitboxSize = 20;
 	
 	hitbox.x = playerPositionX;
 	hitbox.y = playerPositionY;
@@ -49,7 +49,7 @@ void Player::draw(){
 }
 
 void Player::renderPlayer(){
-	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
+	SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0xFF, 0xFF ); 
 	SDL_RenderFillRect( Graphics::gRenderer, &hitbox );
 }
 

@@ -6,6 +6,9 @@
 #include "Player.h"
 #include "GameTimer.h"
 #include "Graphics.h"
+#include <vector>
+#include "Enemy.h"
+#include "Schedule.h"
 
 
 using namespace std;
@@ -14,8 +17,14 @@ void init();
 bool loadMedia();
 void close();
 
+//World obects
 Player player;
+vector<Enemy> enemyVectors;
+
+
+//timer
 GameTimer gTimer;
+
 
 
 //SDL_Texture* loadTexture( std::string path );
@@ -60,7 +69,11 @@ void draw(){
 
 		player.draw();
 
-		
+		for(int i = 0; i < enemyVectors.size(); i++){
+			enemyVectors[i].draw();
+		}
+
+
 		//Update screen
 		SDL_RenderPresent( Graphics::gRenderer );
 }
@@ -79,7 +92,13 @@ void update(const Uint8* currentKeyStates){
 		player.mRight = true;
 	}
 
+	for(int i = 0; i < enemyVectors.size(); i++){
+			enemyVectors[i].update(gTimer.DeltaTime());
+	}
+
 	player.update(gTimer.DeltaTime());
+	
+	
 
 }
 
@@ -91,6 +110,9 @@ int main( int argc, char* args[] ) {
 	bool quit = false;
 	SDL_Event event;
 	gTimer.Reset();
+	
+	Schedule gameSched(enemyVectors);
+	
 
 	while( !quit )
 	{
@@ -100,10 +122,13 @@ int main( int argc, char* args[] ) {
 			}
 		}//EventWhile
 
+		gameSched.checkSpawn(gTimer.TotalTime(),enemyVectors);
+
 		//control the game, and update timer
 		const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
 		update(currentKeyStates);
 		gTimer.Tick();
+		cout << gTimer.TotalTime() << "\n";
 
 		//draw to the screen
 		draw();

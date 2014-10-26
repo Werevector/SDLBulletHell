@@ -5,8 +5,8 @@ BULLET HELL GAME::
 1st long therm goals:
 -------------------------------
 	Moving player;  
-	Restructure code; <<---- CURRENT TASK
-	Spawning enemies;
+	Restructure code;
+	Spawning enemies; <<---- CURRENT TASK
 	Moving enemies;
 	Spawning bullets (simple);
 	Moving bullets;
