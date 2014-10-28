@@ -1,18 +1,31 @@
 #include "SDL.h"
+#include "Graphics.h"
+#include "Player.h"
+#include "GameTimer.h"
 
-struct Bullet{
+class Bullet{
 
 public:
 
-	Bullet(int, int);
+	float spawnTime;
+	Bullet(int, int, Player&, float);
+	void Update(GameTimer bTime);
+	void Draw();
 
 	//SDL_Texture *texture;
 	SDL_Rect bHitBox;
 
-	int BulletPosX;
-	int BulletPosY;
+	int bulletPosX;
+	int bulletPosY;
 
 	float bVelocX;
 	float bVelocY;
+
+	float angle;
+
+private:
+
+	void Move(int, int);
+	void Render();
 
 };

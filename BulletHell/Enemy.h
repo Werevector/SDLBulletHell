@@ -2,6 +2,7 @@
 #include <vector>
 #include "SDL.h"
 #include "Graphics.h"
+#include "Bullet.h"
 
 class Enemy{
 
@@ -30,6 +31,8 @@ private:
 	void renderEnemy();
 	
 	void despawn();
+
+	
 	
 
 public:
@@ -39,5 +42,5 @@ public:
 	void draw();
 	void update(float deltaTime);
 	void spawn();
-
+	void Shoot(std::vector<Bullet>&, Player&, GameTimer&);
 };

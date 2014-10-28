@@ -27,5 +27,7 @@ public:
 	void update(float deltaTime);
 	Player();
 	void draw();
+	int GetPlayerX();
+	int GetPlayerY();
 
 };

@@ -9,7 +9,7 @@
 #include <vector>
 #include "Enemy.h"
 #include "Schedule.h"
-
+#include "Bullet.h"
 
 using namespace std;
 
@@ -20,8 +20,8 @@ void close();
 //World obects
 Player player;
 vector<Enemy> enemyVectors;
-
-
+Schedule gameSched(enemyVectors);
+vector<Bullet> bulletVectors;
 //timer
 GameTimer gTimer;
 
@@ -92,12 +92,14 @@ void update(const Uint8* currentKeyStates){
 		player.mRight = true;
 	}
 
+	//Enemies
 	for(int i = 0; i < enemyVectors.size(); i++){
 			enemyVectors[i].update(gTimer.DeltaTime());
+			enemyVectors[i].Shoot(bulletVectors, player, gTimer);
 	}
 
 	player.update(gTimer.DeltaTime());
-	
+	gameSched.checkSpawn(gTimer.TotalTime(),enemyVectors);
 	
 
 }
@@ -111,8 +113,6 @@ int main( int argc, char* args[] ) {
 	SDL_Event event;
 	gTimer.Reset();
 	
-	Schedule gameSched(enemyVectors);
-	
 
 	while( !quit )
 	{
@@ -121,8 +121,6 @@ int main( int argc, char* args[] ) {
 				quit = true;
 			}
 		}//EventWhile
-
-		gameSched.checkSpawn(gTimer.TotalTime(),enemyVectors);
 
 		//control the game, and update timer
 		const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );

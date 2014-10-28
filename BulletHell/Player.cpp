@@ -59,3 +59,11 @@ void Player::resetFlags(){
 	mLeft=false;
 	mRight=false;
 }
+
+int Player::GetPlayerX(){
+	return playerPositionX;
+}
+
+int Player::GetPlayerY(){
+	return playerPositionY;
+}

@@ -56,3 +56,9 @@ void Enemy::spawn(){
 void Enemy::despawn(){
 	isSpawned = true;
 }
+
+void Enemy::Shoot(std::vector<Bullet>& bulletVectors, Player& player, GameTimer& eTime){
+	
+		Bullet b(EnemyPosX, EnemyPosY, player, eTime.DeltaTime());
+		bulletVectors.push_back(b);
+}
