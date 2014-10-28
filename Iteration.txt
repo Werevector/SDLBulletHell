@@ -6,9 +6,9 @@ BULLET HELL GAME::
 -------------------------------
 	Moving player;  
 	Restructure code;
-	Spawning enemies; <<---- CURRENT TASK
-	Moving enemies;
-	Spawning bullets (simple);
+	Spawning enemies; 
+	Moving enemies; 
+	Spawning bullets (simple); <<---- CURRENT TASK
 	Moving bullets;
 -------------------------------
 
