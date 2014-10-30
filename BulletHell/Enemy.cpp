@@ -54,11 +54,20 @@ void Enemy::spawn(){
 }
 
 void Enemy::despawn(){
-	isSpawned = true;
+	isSpawned = false;
 }
 
 void Enemy::Shoot(std::vector<Bullet>& bulletVectors, Player& player, GameTimer& eTime){
-	
-		Bullet b(EnemyPosX, EnemyPosY, player, eTime.DeltaTime());
+	if(isSpawned){
+		Bullet b(GetEnemyCenterX(), GetEnemyCenterY(), player, eTime.DeltaTime());
 		bulletVectors.push_back(b);
+	}
+}
+
+int Enemy::GetEnemyCenterX(){
+	return (EnemyPosX+(eHitBox.w/2));
+}
+
+int Enemy::GetEnemyCenterY(){
+	return (EnemyPosY+(eHitBox.h/2));
 }

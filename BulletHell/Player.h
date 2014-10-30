@@ -29,5 +29,7 @@ public:
 	void draw();
 	int GetPlayerX();
 	int GetPlayerY();
+	int GetPlayerCenterX();
+	int GetPlayerCenterY();
 
 };

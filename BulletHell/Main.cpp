@@ -73,6 +73,9 @@ void draw(){
 			enemyVectors[i].draw();
 		}
 
+		for(int i = 0; i < bulletVectors.size(); i++){
+			bulletVectors[i].Draw();
+		}
 
 		//Update screen
 		SDL_RenderPresent( Graphics::gRenderer );
@@ -96,6 +99,13 @@ void update(const Uint8* currentKeyStates){
 	for(int i = 0; i < enemyVectors.size(); i++){
 			enemyVectors[i].update(gTimer.DeltaTime());
 			enemyVectors[i].Shoot(bulletVectors, player, gTimer);
+	}
+
+	//Bullets
+	for(int i = 0; i < bulletVectors.size(); i++){
+			bulletVectors[i].Update(gTimer, player);
+
+			
 	}
 
 	player.update(gTimer.DeltaTime());

@@ -67,3 +67,11 @@ int Player::GetPlayerX(){
 int Player::GetPlayerY(){
 	return playerPositionY;
 }
+
+int Player::GetPlayerCenterX(){
+	return (playerPositionX+(hitbox.w/2));
+}
+
+int Player::GetPlayerCenterY(){
+	return (playerPositionY+(hitbox.h/2));
+}

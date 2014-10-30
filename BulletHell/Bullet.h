@@ -1,3 +1,4 @@
+#pragma once
 #include "SDL.h"
 #include "Graphics.h"
 #include "Player.h"
@@ -9,7 +10,7 @@ public:
 
 	float spawnTime;
 	Bullet(int, int, Player&, float);
-	void Update(GameTimer bTime);
+	void Update(GameTimer bTime, Player&);
 	void Draw();
 
 	//SDL_Texture *texture;

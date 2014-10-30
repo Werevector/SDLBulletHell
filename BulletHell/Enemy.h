@@ -30,7 +30,7 @@ private:
 
 	void renderEnemy();
 	
-	void despawn();
+	
 
 	
 	
@@ -43,4 +43,9 @@ public:
 	void update(float deltaTime);
 	void spawn();
 	void Shoot(std::vector<Bullet>&, Player&, GameTimer&);
+
+	int GetEnemyCenterX();
+	int GetEnemyCenterY();
+	void despawn();
+
 };
