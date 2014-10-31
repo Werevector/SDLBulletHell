@@ -16,8 +16,8 @@ BULLET HELL GAME::
 2nd long therm goals:
 -----------------------------------|
 	Upgrade Enemy Pathing;		   | <<--- Current Task
+	Different Types of Enemies;	   |
 	Upgrade Bullet Pathing;		   |
-	Different Types of Enemies;    |
 	Different Types of Bullets;    |
 	A Better Schedule File system; |
 	Restructure Code			   |
