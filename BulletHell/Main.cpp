@@ -99,7 +99,7 @@ void update(const Uint8* currentKeyStates){
 
 	//Enemies
 	for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i].Update(gTimer.DeltaTime());
+			enemyVectors[i].Update(gTimer);
 			enemyVectors[i].Shoot(bulletVectors, player, gTimer);
 	}
 

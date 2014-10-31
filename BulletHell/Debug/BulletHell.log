@@ -1,34 +1,36 @@
-﻿Build started 31.10.2014 10:41:21.
-     1>Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
+﻿Build started 31/10/2014 14:33:15.
+     1>Project "D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\BulletHell.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         R:\Programmering\Visual Studio 2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Bullet.cpp
-         Bullet.cpp
-     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(10): warning C4305: '=' : truncation from 'double' to 'float'
-     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
-     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(41): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(42): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+         D:\Programmering\Visual Studio 10\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Schedule.cpp
+         Schedule.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(9): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(10): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(11): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(12): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(13): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(14): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(15): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(33): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         R:\Programmering\Visual Studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BulletHell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
+         D:\Programmering\Visual Studio 10\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BulletHell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
          Debug\Enemy.obj
          Debug\GameTimer.obj
          Debug\Graphics.obj
          Debug\Main.obj
          Debug\Player.obj
          Debug\Schedule.obj
-         LINK : R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe not found or not built by the last incremental link; performing full link
+         LINK : D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe not found or not built by the last incremental link; performing full link
      1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
-         BulletHell.vcxproj -> R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
+         BulletHell.vcxproj -> D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe;#1" /manifest Debug\BulletHell.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe;#1" /manifest Debug\BulletHell.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\BulletHell.unsuccessfulbuild".
          Touching "Debug\BulletHell.lastbuildstate".
-     1>Done Building Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
+     1>Done Building Project "D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.53
+Time Elapsed 00:00:00.84

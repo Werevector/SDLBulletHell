@@ -1,9 +1,10 @@
 #include "Enemy.h"
 
-Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float spawnTime){
+Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 
-	whenToSpawn = spawnTime;
+	whenToSpawn = when;
 	passedTime = 0;
+	spawnTime = 0;
 
 	enemyPosX = spawnX;
 	enemyPosY = spawnY;
@@ -45,7 +46,7 @@ void Enemy::EnemyMove(float deltaTime){
 }
 
 void Enemy::Spawn(float currtime){
-	if(isSpawned = false){
+	if(isSpawned == false){
 
 		isSpawned = true;
 		spawnTime = currtime;

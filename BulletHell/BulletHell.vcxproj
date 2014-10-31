@@ -37,10 +37,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>R:\Programmering\VS10 dev libraries\SDL2_image-2.0.0\include;R:\Programmering\VS10 dev libraries\SDL2_ttf-2.0.12\include;R:\Programmering\VS10 dev libraries\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Programmering\VS10 Libraries\SDL2_image-2.0.0\include;D:\Programmering\VS10 Libraries\SDL2_ttf-2.0.12\include;D:\Programmering\VS10 Libraries\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>R:\Programmering\VS10 dev libraries\SDL2_image-2.0.0\lib\x86;R:\Programmering\VS10 dev libraries\SDL2_ttf-2.0.12\lib\x86;R:\Programmering\VS10 dev libraries\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\Programmering\VS10 Libraries\SDL2_image-2.0.0\lib\x86;D:\Programmering\VS10 Libraries\SDL2_ttf-2.0.12\lib\x86;D:\Programmering\VS10 Libraries\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
