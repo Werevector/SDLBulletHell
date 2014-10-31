@@ -3,14 +3,33 @@
 BULLET HELL GAME::
 
 1st long therm goals:
--------------------------------
-	Moving player;  
-	Restructure code;
-	Spawning enemies; 
-	Moving enemies; 
-	Spawning bullets (simple); <<---- CURRENT TASK
-	Moving bullets;
--------------------------------
+-------------------------------|
+	Moving player;  		   |
+	Restructure code;		   |
+	Spawning enemies; 		   |
+	Moving enemies; 		   |
+	Spawning bullets (simple); |
+	Moving bullets;			   |
+	Restructure Code; 		   | 
+-------------------------------|
+
+2nd long therm goals:
+-----------------------------------|
+	Upgrade Enemy Pathing;		   | <<--- Current Task
+	Upgrade Bullet Pathing;		   |
+	Different Types of Enemies;    |
+	Different Types of Bullets;    |
+	A Better Schedule File system; |
+	Restructure Code			   |
+-----------------------------------|
+
+3rd long therm goals:
+---------------------------
+	Implement Shooting from Player;
+	Implement Enemy Death when health = 0;
+	
+	
+	
 
 	
 
