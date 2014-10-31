@@ -12,9 +12,9 @@ private:
 
 	SDL_Rect hitbox;
 	int hitboxSize; //side size
-	void resetFlags();
-	void renderPlayer();
-	void handleMovement(float deltaTime);
+	
+	void ResetFlags();
+	void HandleMovement(float deltaTime);
 
 public:
 	
@@ -24,9 +24,12 @@ public:
 	bool mLeft;
 	bool mRight;
 
-	void update(float deltaTime);
+	void Update(float deltaTime);
+	
 	Player();
-	void draw();
+	
+	void Draw();
+	
 	int GetPlayerX();
 	int GetPlayerY();
 	int GetPlayerCenterX();

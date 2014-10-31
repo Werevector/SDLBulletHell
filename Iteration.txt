@@ -10,12 +10,12 @@ BULLET HELL GAME::
 	Moving enemies; 		   |
 	Spawning bullets (simple); |
 	Moving bullets;			   |
-	Restructure Code; 		   | <<--- Current Task
+	Restructure Code; 		   | 
 -------------------------------|
 
 2nd long therm goals:
 -----------------------------------|
-	Upgrade Enemy Pathing;		   |
+	Upgrade Enemy Pathing;		   | <<--- Current Task
 	Upgrade Bullet Pathing;		   |
 	Different Types of Enemies;    |
 	Different Types of Bullets;    |

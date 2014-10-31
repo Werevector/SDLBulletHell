@@ -9,8 +9,10 @@ class Bullet{
 public:
 
 	float spawnTime;
+	float passedTime;
+
 	Bullet(int, int, Player&, float);
-	void Update(GameTimer bTime, Player&);
+	void Update(GameTimer&, Player&);
 	void Draw();
 
 	//SDL_Texture *texture;
@@ -24,9 +26,13 @@ public:
 
 	float angle;
 
+	int GetCenterX();
+	int GetCenterY();
+
+	bool isOutsideBounds();
+
 private:
 
 	void Move(int, int);
-	void Render();
 
 };

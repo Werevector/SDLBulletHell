@@ -13,11 +13,11 @@ Player::Player(){
 	hitbox.w = hitboxSize;
 }
 
-void Player::update(float deltaTime){
-	handleMovement(deltaTime);
+void Player::Update(float deltaTime){
+	HandleMovement(deltaTime);
 }
 
-void Player::handleMovement(float deltaTime) {
+void Player::HandleMovement(float deltaTime) {
 	
 
 	if(mUpp && hitbox.y > 0){
@@ -39,21 +39,18 @@ void Player::handleMovement(float deltaTime) {
 		hitbox.x = playerPositionX;
 		printf("moveRight\n");
 	}
-	
-	resetFlags();
+	ResetFlags();
 	
 }
 
-void Player::draw(){
-	renderPlayer();
-}
+void Player::Draw(){
 
-void Player::renderPlayer(){
 	SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0xFF, 0xFF ); 
 	SDL_RenderFillRect( Graphics::gRenderer, &hitbox );
+
 }
 
-void Player::resetFlags(){
+void Player::ResetFlags(){
 	mUpp=false;
 	mDown=false;
 	mLeft=false;

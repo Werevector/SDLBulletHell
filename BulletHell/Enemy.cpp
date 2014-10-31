@@ -1,73 +1,73 @@
 #include "Enemy.h"
 
-Enemy::Enemy(int x, int y, float vX, float vY, float spawnTime){
+Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float spawnTime){
 
-	spawnTimeSec = spawnTime;
+	whenToSpawn = spawnTime;
+	passedTime = 0;
 
-	spawnPosX = x;
-	spawnPosY = y;
+	enemyPosX = spawnX;
+	enemyPosY = spawnY;
 
-	boxW = 20;
-	boxH = 20;
-
-	EnemyPosX = spawnPosX;
-	EnemyPosY = spawnPosY;
+	boxW = HITBOX_SIZE;
+	boxH = HITBOX_SIZE;
 
 	eVelocX = vX;
 	eVelocY = vY;
 
-	eHitBox.x = EnemyPosX;
-	eHitBox.y = EnemyPosY;
+	eHitBox.x = enemyPosX;
+	eHitBox.y = enemyPosY;
 	eHitBox.w = boxW;
 	eHitBox.h = boxH;
 
 	isSpawned = false;
 }
 
-void Enemy::update(float deltaTime){
+void Enemy::Update(GameTimer eTime){
 	
 	if(isSpawned){
-		enemyMove(deltaTime);
-		eHitBox.x = EnemyPosX;
-		eHitBox.y = EnemyPosY;
+		EnemyMove(eTime.DeltaTime());
+		eHitBox.x = enemyPosX;
+		eHitBox.y = enemyPosY;
+		passedTime = (eTime.TotalTime()-spawnTime);
 	}
 }
 
-void Enemy::draw(){
+void Enemy::Draw(){
 	if(isSpawned){
-		renderEnemy();
+		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
+		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
 	}
 }
 
-void Enemy::renderEnemy(){
-	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
-	SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
+void Enemy::EnemyMove(float deltaTime){
+	enemyPosX += (eVelocX/deltaTime);
+	enemyPosY += (eVelocY/deltaTime);
 }
 
-void Enemy::enemyMove(float deltaTime){
-	EnemyPosX += (eVelocX/deltaTime);
-	EnemyPosY += (eVelocY/deltaTime);
+void Enemy::Spawn(float currtime){
+	if(isSpawned = false){
+
+		isSpawned = true;
+		spawnTime = currtime;
+
+	}
 }
 
-void Enemy::spawn(){
-	isSpawned = true;
-}
-
-void Enemy::despawn(){
+void Enemy::Despawn(){
 	isSpawned = false;
 }
 
 void Enemy::Shoot(std::vector<Bullet>& bulletVectors, Player& player, GameTimer& eTime){
 	if(isSpawned){
-		Bullet b(GetEnemyCenterX(), GetEnemyCenterY(), player, eTime.DeltaTime());
+		Bullet b(GetEnemyCenterX(), GetEnemyCenterY(), player, eTime.TotalTime());
 		bulletVectors.push_back(b);
 	}
 }
 
 int Enemy::GetEnemyCenterX(){
-	return (EnemyPosX+(eHitBox.w/2));
+	return (enemyPosX+(eHitBox.w/2));
 }
 
 int Enemy::GetEnemyCenterY(){
-	return (EnemyPosY+(eHitBox.h/2));
+	return (enemyPosY+(eHitBox.h/2));
 }

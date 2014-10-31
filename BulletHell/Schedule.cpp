@@ -32,13 +32,13 @@ void Schedule::checkSpawn(float sTime, std::vector<Enemy>& Enemies ){
 
 	for(int i = 0; i < Enemies.size(); i++){
 		
-		if(sTime > Enemies[i].spawnTimeSec){
-			Enemies[i].spawn();
+		if(sTime > Enemies[i].whenToSpawn){
+			Enemies[i].Spawn(sTime);
 		}
 		
 		if(Enemies[i].GetEnemyCenterX() > Graphics::SCREEN_WIDTH ||
 			Enemies[i].GetEnemyCenterY() > Graphics::SCREEN_HEIGHT){
-				Enemies[i].despawn();
+				Enemies[i].Despawn();
 		}
 	
 	}

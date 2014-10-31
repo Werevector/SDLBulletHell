@@ -8,44 +8,43 @@ class Enemy{
 
 private:
 
+	static const int HITBOX_SIZE = 10;
+
 	bool isSpawned;
 
-	int spawnPosX;
-	int spawnPosY;
+	float spawnTime;
+	float passedTime;
+
+	//Position
+	int enemyPosX;
+	int enemyPosY;
 
 	//Velocity
 	float eVelocX;
 	float eVelocY;
 
-	int EnemyPosX;
-	int EnemyPosY;
-
-	void enemyMove(float deltaTime);
-
-	std::vector<int> calcPath();
-
+	//Hitbox
 	SDL_Rect eHitBox;
 	int boxW;
 	int boxH;
-
-	void renderEnemy();
 	
-	
-
-	
-	
+	void EnemyMove(float deltaTime);
 
 public:
+	
+	float whenToSpawn;
 
-	float spawnTimeSec;
 	Enemy(int, int, float, float, float);
-	void draw();
-	void update(float deltaTime);
-	void spawn();
+	
+	void Draw();
+	void Update(GameTimer);
+	
 	void Shoot(std::vector<Bullet>&, Player&, GameTimer&);
 
 	int GetEnemyCenterX();
 	int GetEnemyCenterY();
-	void despawn();
+	
+	void Despawn();
+	void Spawn(float);
 
 };
