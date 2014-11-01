@@ -19,7 +19,7 @@ void close();
 
 //World obects
 Player player;
-vector<Enemy> enemyVectors;
+vector<Enemy*> enemyVectors;
 Schedule gameSched(enemyVectors);
 vector<Bullet> bulletVectors;
 
@@ -72,7 +72,7 @@ void draw(){
 		player.Draw();
 
 		for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i].Draw();
+			enemyVectors[i]->Draw();
 		}
 
 		for(int i = 0; i < bulletVectors.size(); i++){
@@ -99,14 +99,17 @@ void update(const Uint8* currentKeyStates){
 
 	//Enemies
 	for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i].Update(gTimer);
-			enemyVectors[i].Shoot(bulletVectors, player, gTimer);
+			enemyVectors[i]->Update(gTimer);
+			enemyVectors[i]->Shoot(bulletVectors, gTimer);
 	}
 
 	//Bullets
 	for(int i = 0; i < bulletVectors.size(); i++){
 			bulletVectors[i].Update(gTimer, player);
-	
+			if(bulletVectors[i].isOutsideBounds()){
+				bulletVectors.erase(bulletVectors.begin() + i);
+				bulletVectors.shrink_to_fit();
+			}
 	}
 
 	player.Update(gTimer.DeltaTime());
@@ -137,7 +140,7 @@ int main( int argc, char* args[] ) {
 		update(currentKeyStates);
 
 		gTimer.Tick();
-		cout << gTimer.TotalTime() << "\n";
+		cout << gTimer.TotalTime() << "  " << bulletVectors.size() << "\n";
 
 		//draw to the screen
 		draw();

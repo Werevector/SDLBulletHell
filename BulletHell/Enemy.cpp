@@ -6,6 +6,8 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 	passedTime = 0;
 	spawnTime = 0;
 
+	healthPoints = 10;
+
 	enemyPosX = spawnX;
 	enemyPosY = spawnY;
 
@@ -21,6 +23,9 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 	eHitBox.h = boxH;
 
 	isSpawned = false;
+
+	firingAngle = CalcFiringAngle(0,0);
+
 }
 
 void Enemy::Update(GameTimer eTime){
@@ -30,6 +35,7 @@ void Enemy::Update(GameTimer eTime){
 		eHitBox.x = enemyPosX;
 		eHitBox.y = enemyPosY;
 		passedTime = (eTime.TotalTime()-spawnTime);
+		firingAngle += sin(passedTime+180);
 	}
 }
 
@@ -40,17 +46,17 @@ void Enemy::Draw(){
 	}
 }
 
+
+
 void Enemy::EnemyMove(float deltaTime){
-	enemyPosX += (eVelocX/deltaTime);
-	enemyPosY += (eVelocY/deltaTime);
+	enemyPosX += (eVelocX*deltaTime);
+	enemyPosY += (eVelocY*deltaTime);
 }
 
 void Enemy::Spawn(float currtime){
-	if(isSpawned == false){
-
+	if(isSpawned == false && IsDead() == false){
 		isSpawned = true;
 		spawnTime = currtime;
-
 	}
 }
 
@@ -58,11 +64,19 @@ void Enemy::Despawn(){
 	isSpawned = false;
 }
 
-void Enemy::Shoot(std::vector<Bullet>& bulletVectors, Player& player, GameTimer& eTime){
+void Enemy::Shoot(std::vector<Bullet>& bulletVectors, GameTimer& eTime){
 	if(isSpawned){
-		Bullet b(GetEnemyCenterX(), GetEnemyCenterY(), player, eTime.TotalTime());
+		Bullet b( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle );
 		bulletVectors.push_back(b);
 	}
+}
+
+float Enemy::CalcFiringAngle(float X,float Y){
+	return -atan2f(Y, X);
+}
+
+void Enemy::Damage(int amountOfDamage){
+	healthPoints -= amountOfDamage;
 }
 
 int Enemy::GetEnemyCenterX(){
@@ -71,4 +85,14 @@ int Enemy::GetEnemyCenterX(){
 
 int Enemy::GetEnemyCenterY(){
 	return (enemyPosY+(eHitBox.h/2));
+}
+
+int Enemy::GetHealth(){
+	return healthPoints;
+}
+
+bool Enemy::IsDead(){
+	bool result = false;
+	if(healthPoints <= 0){result = true;}
+	return result;
 }

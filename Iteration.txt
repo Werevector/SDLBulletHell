@@ -24,12 +24,10 @@ BULLET HELL GAME::
 -----------------------------------|
 
 3rd long therm goals:
----------------------------
-	Implement Shooting from Player;
-	Implement Enemy Death when health = 0;
-	
-	
-	
+-------------------------------------------|
+	Implement Shooting from Player;		   |
+	Implement Enemy Death when health = 0; |
+-------------------------------------------|
 
 	
 

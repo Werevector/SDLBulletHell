@@ -6,9 +6,11 @@
 
 class Enemy{
 
-private:
+protected:
 
 	static const int HITBOX_SIZE = 10;
+
+	int healthPoints;
 
 	bool isSpawned;
 
@@ -27,8 +29,12 @@ private:
 	SDL_Rect eHitBox;
 	int boxW;
 	int boxH;
+
+	float firingAngle;
 	
 	void EnemyMove(float deltaTime);
+
+	float CalcFiringAngle(float,float);
 
 public:
 	
@@ -36,15 +42,19 @@ public:
 
 	Enemy(int, int, float, float, float);
 	
-	void Draw();
-	void Update(GameTimer);
+	virtual void Draw();
+	virtual void Update(GameTimer);
 	
-	void Shoot(std::vector<Bullet>&, Player&, GameTimer&);
+	void Shoot(std::vector<Bullet>&, GameTimer&);
 
 	int GetEnemyCenterX();
 	int GetEnemyCenterY();
 	
 	void Despawn();
 	void Spawn(float);
+
+	int GetHealth();
+	void Damage(int);
+	bool IsDead();
 
 };

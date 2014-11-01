@@ -2,6 +2,8 @@
 #include "SDL.h"
 #include <iostream>
 #include "Graphics.h"
+#include <vector>
+
 
 class Player {
 
@@ -9,6 +11,8 @@ private:
 
 	int playerPositionX;
 	int playerPositionY;
+
+	//void Shoot(std::vector<Bullet>&, GameTimer);
 
 	SDL_Rect hitbox;
 	int hitboxSize; //side size

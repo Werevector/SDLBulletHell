@@ -1,6 +1,6 @@
 #include "Bullet.h"
 
-Bullet::Bullet(int sX, int sY, Player& player, float time){
+Bullet::Bullet(int sX, int sY, float time, float targetAngle){
 	bulletPosX = sX;
 	bulletPosY = sY;
 
@@ -15,7 +15,9 @@ Bullet::Bullet(int sX, int sY, Player& player, float time){
 	bHitBox.h = 5;
 	bHitBox.w = 5;
 	
-	angle = -atan2f(player.GetPlayerCenterY()-bulletPosY, player.GetPlayerCenterX()-bulletPosX);
+	//-atan2f(player.GetPlayerCenterY()-bulletPosY, player.GetPlayerCenterX()-bulletPosX);
+
+	angle = targetAngle;
 }
 
 void Bullet::Move(int x, int y){
@@ -28,7 +30,7 @@ void Bullet::Move(int x, int y){
 
 bool Bullet::isOutsideBounds(){
 	bool result = false;
-	if(GetCenterX() >= Graphics::SCREEN_WIDTH || GetCenterY() >= Graphics::SCREEN_HEIGHT){
+	if(GetCenterX() >= Graphics::SCREEN_WIDTH + 50 || GetCenterY() >= Graphics::SCREEN_HEIGHT + 50 || GetCenterY() <= -50 || GetCenterX() <= -50){
 		result = true;
 	}
 	return result;
@@ -38,9 +40,10 @@ void Bullet::Update(GameTimer& bTime, Player& player){
 	
 	passedTime = (bTime.TotalTime()-spawnTime);
 	
-	int x = cos(angle)*(bVelocX+(0.05*(passedTime)))/bTime.DeltaTime();
-	int y = -sin(angle)*(bVelocY+(0.05*(passedTime)))/bTime.DeltaTime();
+	int x = cos(angle)*bVelocX/bTime.DeltaTime();
+	int y = -sin(angle)*bVelocY/bTime.DeltaTime();
 	Move(x, y);
+
 }
 
 void Bullet::Draw(){

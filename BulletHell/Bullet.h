@@ -11,7 +11,7 @@ public:
 	float spawnTime;
 	float passedTime;
 
-	Bullet(int, int, Player&, float);
+	Bullet(int, int, float, float);
 	void Update(GameTimer&, Player&);
 	void Draw();
 
@@ -24,15 +24,14 @@ public:
 	float bVelocX;
 	float bVelocY;
 
-	float angle;
-
 	int GetCenterX();
 	int GetCenterY();
 
 	bool isOutsideBounds();
 
-private:
+protected:
 
 	void Move(int, int);
+	float angle;
 
 };

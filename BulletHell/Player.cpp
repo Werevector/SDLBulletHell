@@ -57,6 +57,10 @@ void Player::ResetFlags(){
 	mRight=false;
 }
 
+//void Player::Shoot(std::vector<Bullet>& playerBullets, GameTimer pTime){
+//	
+//}
+
 int Player::GetPlayerX(){
 	return playerPositionX;
 }
