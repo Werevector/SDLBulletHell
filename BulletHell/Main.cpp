@@ -21,7 +21,7 @@ void close();
 Player player;
 vector<Enemy*> enemyVectors;
 Schedule gameSched(enemyVectors);
-vector<Bullet> bulletVectors;
+vector<Bullet*> bulletVectors;
 
 //timer
 GameTimer gTimer;
@@ -76,7 +76,7 @@ void draw(){
 		}
 
 		for(int i = 0; i < bulletVectors.size(); i++){
-			bulletVectors[i].Draw();
+			bulletVectors[i]->Draw();
 		}
 
 		//Update screen
@@ -105,8 +105,8 @@ void update(const Uint8* currentKeyStates){
 
 	//Bullets
 	for(int i = 0; i < bulletVectors.size(); i++){
-			bulletVectors[i].Update(gTimer, player);
-			if(bulletVectors[i].isOutsideBounds()){
+			bulletVectors[i]->Update(gTimer, player);
+			if(bulletVectors[i]->isOutsideBounds()){
 				bulletVectors.erase(bulletVectors.begin() + i);
 				bulletVectors.shrink_to_fit();
 			}

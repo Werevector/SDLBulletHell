@@ -12,8 +12,8 @@ public:
 	float passedTime;
 
 	Bullet(int, int, float, float);
-	void Update(GameTimer&, Player&);
-	void Draw();
+	virtual void Update(GameTimer&, Player&);
+	virtual void Draw();
 
 	//SDL_Texture *texture;
 	SDL_Rect bHitBox;

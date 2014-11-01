@@ -3,8 +3,8 @@
 Schedule::Schedule(vector<Enemy*>& enemyVectors){
 
 
-	enemyVectors.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,100, 5));
-	enemyVectors.push_back(new SpiralEnemy((Graphics::SCREEN_WIDTH/2),0,0,100, 8));
+	//enemyVectors.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,100, 2));
+	enemyVectors.push_back(new SpiralEnemy((Graphics::SCREEN_WIDTH/2),0,0,100, 2));
 
 }
 

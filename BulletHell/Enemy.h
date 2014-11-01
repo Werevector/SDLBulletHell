@@ -8,7 +8,7 @@ class Enemy{
 
 protected:
 
-	static const int HITBOX_SIZE = 10;
+	static const int HITBOX_SIZE = 20;
 
 	int healthPoints;
 
@@ -45,7 +45,7 @@ public:
 	virtual void Draw();
 	virtual void Update(GameTimer);
 	
-	void Shoot(std::vector<Bullet>&, GameTimer&);
+	virtual void Shoot(std::vector<Bullet*>&, GameTimer&);
 
 	int GetEnemyCenterX();
 	int GetEnemyCenterY();

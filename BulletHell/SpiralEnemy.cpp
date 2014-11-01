@@ -4,10 +4,10 @@ SpiralEnemy::SpiralEnemy(int spawnX, int spawnY, float vX, float vY, float when)
 	
 }
 
-void SpiralEnemy::Shoot(std::vector<Bullet>& bulletVectors, GameTimer& eTime){
+void SpiralEnemy::Shoot(std::vector<Bullet*>& bulletVectors, GameTimer& eTime){
 	if(isSpawned){
-		Bullet b(GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle );
-		bulletVectors.push_back(b);
+		bulletVectors.push_back(new YSpeedBullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle ));
+		bulletVectors.push_back(new YSpeedBullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle + 180 ));
 	}
 }
 
