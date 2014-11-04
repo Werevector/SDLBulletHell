@@ -24,18 +24,19 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 
 	isSpawned = false;
 
-	firingAngle = CalcFiringAngle(0,0);
+	firingAngle = CalcFiringAngle(3.14,6);
 
 }
 
-void Enemy::Update(GameTimer eTime){
+void Enemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 	
 	if(isSpawned){
 		EnemyMove(eTime.DeltaTime());
 		eHitBox.x = enemyPosX;
 		eHitBox.y = enemyPosY;
 		passedTime = (eTime.TotalTime()-spawnTime);
-		firingAngle += sin(passedTime+180);
+		firingAngle += sin(passedTime);
+		Shoot(bulletVectors, eTime);
 	}
 }
 

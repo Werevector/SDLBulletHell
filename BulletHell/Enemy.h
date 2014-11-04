@@ -36,6 +36,8 @@ protected:
 
 	float CalcFiringAngle(float,float);
 
+	virtual void Shoot(std::vector<Bullet*>&, GameTimer&);
+
 public:
 	
 	float whenToSpawn;
@@ -43,9 +45,9 @@ public:
 	Enemy(int, int, float, float, float);
 	
 	virtual void Draw();
-	virtual void Update(GameTimer);
+	virtual void Update(std::vector<Bullet*>&, GameTimer);
 	
-	virtual void Shoot(std::vector<Bullet*>&, GameTimer&);
+	
 
 	int GetEnemyCenterX();
 	int GetEnemyCenterY();

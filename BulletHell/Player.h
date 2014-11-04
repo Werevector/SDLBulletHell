@@ -12,6 +12,8 @@ private:
 	int playerPositionX;
 	int playerPositionY;
 
+	float playerSpeed;
+
 	//void Shoot(std::vector<Bullet>&, GameTimer);
 
 	SDL_Rect hitbox;
@@ -27,6 +29,7 @@ public:
 	bool mDown;
 	bool mLeft;
 	bool mRight;
+	bool focus;
 
 	void Update(float deltaTime);
 	

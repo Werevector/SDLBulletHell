@@ -11,15 +11,15 @@ public:
 	float spawnTime;
 	float passedTime;
 
-	Bullet(int, int, float, float);
+	Bullet(float, float, float, float);
 	virtual void Update(GameTimer&, Player&);
 	virtual void Draw();
 
 	//SDL_Texture *texture;
 	SDL_Rect bHitBox;
 
-	int bulletPosX;
-	int bulletPosY;
+	float bulletPosX;
+	float bulletPosY;
 
 	float bVelocX;
 	float bVelocY;
@@ -31,7 +31,8 @@ public:
 
 protected:
 
-	void Move(int, int);
+	void Move(float, float);
 	float angle;
+	static const int HITBOX_SIZE = 5;
 
 };

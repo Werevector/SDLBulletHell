@@ -5,8 +5,9 @@ class YSpeedBullet : public Bullet{
 
 
 public:
-	YSpeedBullet(int, int, float, float);
+	YSpeedBullet(float, float, float, float);
 	void Draw();
+	void Update(GameTimer&, Player&);
 
 protected:
 

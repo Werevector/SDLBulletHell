@@ -1,26 +1,26 @@
 #include "Bullet.h"
 
-Bullet::Bullet(int sX, int sY, float time, float targetAngle){
-	bulletPosX = sX;
-	bulletPosY = sY;
+Bullet::Bullet(float sX, float sY, float time, float targetAngle){
+	bulletPosX = sX-(HITBOX_SIZE/2);
+	bulletPosY = sY-(HITBOX_SIZE/2);
 
 	spawnTime = time;
 	passedTime = 0;
 
-	bVelocX = 0.1;
-	bVelocY = 0.1;
+	bVelocX = 100;
+	bVelocY = 100;
 	
 	bHitBox.x = bulletPosX;
 	bHitBox.y = bulletPosY;
-	bHitBox.h = 5;
-	bHitBox.w = 5;
+	bHitBox.h = HITBOX_SIZE;
+	bHitBox.w = HITBOX_SIZE;
 	
 	//-atan2f(player.GetPlayerCenterY()-bulletPosY, player.GetPlayerCenterX()-bulletPosX);
 
 	angle = targetAngle;
 }
 
-void Bullet::Move(int x, int y){
+void Bullet::Move(float x, float y){
 	bulletPosX += x;
 	bulletPosY += y;
 
@@ -40,8 +40,8 @@ void Bullet::Update(GameTimer& bTime, Player& player){
 	
 	passedTime = (bTime.TotalTime()-spawnTime);
 	
-	int x = cos(angle)*bVelocX/bTime.DeltaTime();
-	int y = -sin(angle)*bVelocY/bTime.DeltaTime();
+	float x = cos(angle)*bVelocX*bTime.DeltaTime();
+	float y = -sin(angle)*bVelocY*bTime.DeltaTime();
 	Move(x, y);
 
 }

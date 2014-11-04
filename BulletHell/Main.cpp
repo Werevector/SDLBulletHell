@@ -97,10 +97,15 @@ void update(const Uint8* currentKeyStates){
 		player.mRight = true;
 	}
 
+	if(currentKeyStates[ SDL_SCANCODE_LSHIFT ]){
+		player.focus = true;
+	}else{
+		player.focus = false;
+	}
+
 	//Enemies
 	for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i]->Update(gTimer);
-			enemyVectors[i]->Shoot(bulletVectors, gTimer);
+			enemyVectors[i]->Update(bulletVectors, gTimer);
 	}
 
 	//Bullets
@@ -108,7 +113,7 @@ void update(const Uint8* currentKeyStates){
 			bulletVectors[i]->Update(gTimer, player);
 			if(bulletVectors[i]->isOutsideBounds()){
 				bulletVectors.erase(bulletVectors.begin() + i);
-				bulletVectors.shrink_to_fit();
+				
 			}
 	}
 

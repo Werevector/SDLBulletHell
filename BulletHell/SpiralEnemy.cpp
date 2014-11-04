@@ -6,19 +6,27 @@ SpiralEnemy::SpiralEnemy(int spawnX, int spawnY, float vX, float vY, float when)
 
 void SpiralEnemy::Shoot(std::vector<Bullet*>& bulletVectors, GameTimer& eTime){
 	if(isSpawned){
-		bulletVectors.push_back(new YSpeedBullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle ));
-		bulletVectors.push_back(new YSpeedBullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle + 180 ));
+		for(int i = 1 ; i <= 1 ; i++){	
+			bulletVectors.push_back(new YSpeedBullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle ));
+			bulletVectors.push_back(new YSpeedBullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle +(3.14) ));
+		}
 	}
 }
 
-void SpiralEnemy::Update(GameTimer eTime){
+void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 	
 	if(isSpawned){
-		EnemyMove(eTime.DeltaTime());
+		passedTime = (eTime.TotalTime()-spawnTime);
+		if(GetEnemyCenterY() < Graphics::SCREEN_HEIGHT/2 || passedTime > 10){
+			EnemyMove(eTime.DeltaTime());
+		}else{
+			firingAngle += (3.13/16);
+			Shoot(bulletVectors, eTime);
+		}
 		eHitBox.x = enemyPosX;
 		eHitBox.y = enemyPosY;
-		passedTime = (eTime.TotalTime()-spawnTime);
-		firingAngle += 0.1;
+		//firingAngle += 0.1;
+		
 	}
 }
 

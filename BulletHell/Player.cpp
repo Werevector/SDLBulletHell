@@ -2,15 +2,18 @@
 
 Player::Player(){
 	
-	playerPositionX = 60;
-	playerPositionY = 60;
+	playerPositionX = Graphics::SCREEN_WIDTH/2;
+	playerPositionY = Graphics::SCREEN_HEIGHT/1.5;
 	
-	hitboxSize = 20;
+	hitboxSize = 3;
 	
 	hitbox.x = playerPositionX;
 	hitbox.y = playerPositionY;
 	hitbox.h = hitboxSize;
 	hitbox.w = hitboxSize;
+
+	playerSpeed = 150;
+
 }
 
 void Player::Update(float deltaTime){
@@ -19,23 +22,28 @@ void Player::Update(float deltaTime){
 
 void Player::HandleMovement(float deltaTime) {
 	
+	if(focus){
+		playerSpeed = 150;
+	}else{
+		playerSpeed = 500;
+	}
 
 	if(mUpp && hitbox.y > 0){
-		playerPositionY -= (0.1/deltaTime);
+		playerPositionY -= (playerSpeed*deltaTime);
 		hitbox.y = playerPositionY;
 		printf("moveUpp\n");
 	}else if(mDown && hitbox.y < (Graphics::SCREEN_HEIGHT - hitbox.h)){
-		playerPositionY += (0.1/deltaTime);
+		playerPositionY += (playerSpeed*deltaTime);
 		hitbox.y = playerPositionY;
 		printf("moveDown\n");
 	}
 	
 	if(mLeft && hitbox.x > 0){
-		playerPositionX -= (0.1/deltaTime);
+		playerPositionX -= (playerSpeed*deltaTime);
 		hitbox.x = playerPositionX;
 		printf("moveLeft\n");
 	}else if(mRight && hitbox.x < (Graphics::SCREEN_WIDTH - hitbox.h)){
-		playerPositionX += (0.1/deltaTime);
+		playerPositionX += (playerSpeed*deltaTime);
 		hitbox.x = playerPositionX;
 		printf("moveRight\n");
 	}
