@@ -13,18 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{fa188973-3ed3-4c56-a726-97cdc1859b04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Bullets">
+      <UniqueIdentifier>{cbf20c77-9d28-4081-b581-87d8ae271d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Enemies">
+      <UniqueIdentifier>{e2132965-d4db-429a-867e-29a3d2b5ccdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{e766d5ff-910a-415d-80bc-b445c2e349e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Bullets">
+      <UniqueIdentifier>{fca56f9e-31bd-466c-bf6f-d3a48b4d6e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Enemies">
+      <UniqueIdentifier>{23267500-2e47-4ce4-9e74-02ca24153f4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Objects\Players">
+      <UniqueIdentifier>{71f81e6f-b6bd-4359-afba-59c72df644d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects\Players">
+      <UniqueIdentifier>{87d9f564-cc6f-45c7-9216-7e95be98e93b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameTimer.cpp">
@@ -36,23 +51,23 @@
     <ClCompile Include="Schedule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\Objects\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Source Files\Objects\Enemies</Filter>
+    </ClCompile>
     <ClCompile Include="SpiralEnemy.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Objects\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="YSpeedBullet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Objects\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Objects\Players</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameTimer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -62,11 +77,20 @@
     <ClInclude Include="Schedule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SpiralEnemy.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files\Objects\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Header Files\Objects\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="YSpeedBullet.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Objects\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiralEnemy.h">
+      <Filter>Header Files\Objects\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Objects\Players</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

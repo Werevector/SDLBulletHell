@@ -36,7 +36,7 @@ void init()
 
 	SDL_Init( SDL_INIT_VIDEO );
 	SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" );
-	
+
 	Graphics::gWindow = SDL_CreateWindow( "BulletHell", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 	Graphics::gRenderer = SDL_CreateRenderer( Graphics::gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
 	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
@@ -53,7 +53,7 @@ bool loadMedia()
 
 void close()
 {
-	//Destroy window	
+	//Destroy window
 	SDL_DestroyRenderer( Graphics::gRenderer );
 	SDL_DestroyWindow( Graphics::gWindow );
 	Graphics::gWindow = NULL;
@@ -64,7 +64,7 @@ void close()
 }
 
 void draw(){
-		
+
 	//Clear screen
 		SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0x00, 0xFF );
 		SDL_RenderClear( Graphics::gRenderer );
@@ -84,13 +84,13 @@ void draw(){
 }
 
 void update(const Uint8* currentKeyStates){
-	
+
 	if(currentKeyStates[ SDL_SCANCODE_UP ]){
 		player.mUpp = true;
 	}else if (currentKeyStates[ SDL_SCANCODE_DOWN ]){
 		player.mDown = true;
 	}
-		
+
 	if (currentKeyStates[ SDL_SCANCODE_LEFT ]){
 		player.mLeft = true;
 	}else if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
@@ -113,25 +113,25 @@ void update(const Uint8* currentKeyStates){
 			bulletVectors[i]->Update(gTimer, player);
 			if(bulletVectors[i]->isOutsideBounds()){
 				bulletVectors.erase(bulletVectors.begin() + i);
-				
+
 			}
 	}
 
 	player.Update(gTimer.DeltaTime());
 	gameSched.checkSpawn(gTimer.TotalTime(),enemyVectors);
-	
+
 
 }
 
 int main( int argc, char* args[] ) {
-	
+
 	//initialize the game
 	init();
 	loadMedia();
 	bool quit = false;
 	SDL_Event event;
 	gTimer.Reset();
-	
+
 
 	while( !quit )
 	{
@@ -149,7 +149,7 @@ int main( int argc, char* args[] ) {
 
 		//draw to the screen
 		draw();
-		
+
 	}//GameLoop
 
 	close();

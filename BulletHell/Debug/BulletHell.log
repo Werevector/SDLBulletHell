@@ -1,33 +1,17 @@
-﻿Build started 04/11/2014 10:35:18.
-     1>Project "D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
+﻿Build started 07.11.2014 09:12:00.
+     1>Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\BulletHell.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         D:\Programmering\Visual Studio 10\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Schedule.cpp
-         Schedule.cpp
-     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(7): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(11): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(24): warning C4018: '<' : signed/unsigned mismatch
+         All outputs are up-to-date.
        Link:
-         D:\Programmering\Visual Studio 10\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BulletHell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
-         Debug\Enemy.obj
-         Debug\GameTimer.obj
-         Debug\Graphics.obj
-         Debug\Main.obj
-         Debug\Player.obj
-         Debug\Schedule.obj
-         Debug\SpiralEnemy.obj
-         Debug\YSpeedBullet.obj
-         LINK : D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe not found or not built by the last incremental link; performing full link
-     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
-         BulletHell.vcxproj -> D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe;#1" /manifest Debug\BulletHell.exe.intermediate.manifest
+         All outputs are up-to-date.
+         BulletHell.vcxproj -> R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
        FinalizeBuildStatus:
          Deleting file "Debug\BulletHell.unsuccessfulbuild".
          Touching "Debug\BulletHell.lastbuildstate".
-     1>Done Building Project "D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
+     1>Done Building Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.85
+Time Elapsed 00:00:00.11
