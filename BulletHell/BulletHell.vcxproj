@@ -68,21 +68,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletColl.cpp" />
+    <ClCompile Include="BulletHandler.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyColl.cpp" />
+    <ClCompile Include="EnemyHandler.cpp" />
+    <ClCompile Include="GameHandler.cpp" />
     <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerHandler.cpp" />
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="SpiralEnemy.cpp" />
     <ClCompile Include="YSpeedBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletColl.h" />
+    <ClInclude Include="BulletHandler.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyColl.h" />
+    <ClInclude Include="EnemyHandler.h" />
+    <ClInclude Include="GameHandler.h" />
     <ClInclude Include="GameTimer.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerHandler.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="SpiralEnemy.h" />
     <ClInclude Include="YSpeedBullet.h" />

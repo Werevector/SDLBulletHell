@@ -36,7 +36,7 @@ bool Bullet::isOutsideBounds(){
 	return result;
 }
 
-void Bullet::Update(GameTimer& bTime, Player& player){
+void Bullet::Update(GameTimer& bTime){
 	
 	passedTime = (bTime.TotalTime()-spawnTime);
 	

@@ -12,7 +12,7 @@ public:
 	float passedTime;
 
 	Bullet(float, float, float, float);
-	virtual void Update(GameTimer&, Player&);
+	virtual void Update(GameTimer&);
 	virtual void Draw();
 
 	//SDL_Texture *texture;

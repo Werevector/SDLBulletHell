@@ -11,6 +11,10 @@
 #include "Schedule.h"
 #include "Bullet.h"
 
+#include "PlayerHandler.h"
+#include "EnemyHandler.h"
+#include "BulletHandler.h"
+#include "GameHandler.h"
 using namespace std;
 
 void init();
@@ -18,10 +22,16 @@ bool loadMedia();
 void close();
 
 //World obects
-Player player;
-vector<Enemy*> enemyVectors;
-Schedule gameSched(enemyVectors);
-vector<Bullet*> bulletVectors;
+//Player player;
+//vector<Enemy*> enemyVectors;
+//Schedule gameSched(enemyVectors);
+//vector<Bullet*> bulletVectors;
+
+//PlayerHandler pHandler;
+//EnemyHandler eHandler;
+//BulletHandler bHandler;
+
+GameHandler gameHandler;
 
 //timer
 GameTimer gTimer;
@@ -69,15 +79,7 @@ void draw(){
 		SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0x00, 0xFF );
 		SDL_RenderClear( Graphics::gRenderer );
 
-		player.Draw();
-
-		for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i]->Draw();
-		}
-
-		for(int i = 0; i < bulletVectors.size(); i++){
-			bulletVectors[i]->Draw();
-		}
+		gameHandler.RenderAll();
 
 		//Update screen
 		SDL_RenderPresent( Graphics::gRenderer );
@@ -85,41 +87,13 @@ void draw(){
 
 void update(const Uint8* currentKeyStates){
 
-	if(currentKeyStates[ SDL_SCANCODE_UP ]){
-		player.mUpp = true;
-	}else if (currentKeyStates[ SDL_SCANCODE_DOWN ]){
-		player.mDown = true;
-	}
+	/*pHandler.UpdatePlayer(currentKeyStates, gTimer);
+	eHandler.UpdateEnemies(gTimer);
+	bHandler.UpdateBullets(gTimer);*/
 
-	if (currentKeyStates[ SDL_SCANCODE_LEFT ]){
-		player.mLeft = true;
-	}else if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
-		player.mRight = true;
-	}
+	gameHandler.UpdateAll(gTimer, currentKeyStates);
 
-	if(currentKeyStates[ SDL_SCANCODE_LSHIFT ]){
-		player.focus = true;
-	}else{
-		player.focus = false;
-	}
-
-	//Enemies
-	for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i]->Update(bulletVectors, gTimer);
-	}
-
-	//Bullets
-	for(int i = 0; i < bulletVectors.size(); i++){
-			bulletVectors[i]->Update(gTimer, player);
-			if(bulletVectors[i]->isOutsideBounds()){
-				bulletVectors.erase(bulletVectors.begin() + i);
-
-			}
-	}
-
-	player.Update(gTimer.DeltaTime());
-	gameSched.checkSpawn(gTimer.TotalTime(),enemyVectors);
-
+	//gameSched.checkSpawn(gTimer.TotalTime(),enemyVectors);
 
 }
 
@@ -145,7 +119,7 @@ int main( int argc, char* args[] ) {
 		update(currentKeyStates);
 
 		gTimer.Tick();
-		cout << gTimer.TotalTime() << "  " << bulletVectors.size() << "\n";
+		cout << gTimer.TotalTime() << "";
 
 		//draw to the screen
 		draw();

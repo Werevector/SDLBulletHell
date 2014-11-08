@@ -10,7 +10,8 @@ class Schedule{
 
 public:
 
-	Schedule(vector<Enemy*>& enemyVectors);
+	Schedule();
+	void AddEnemiesToGame(vector<Enemy*>&);
 	void checkSpawn(float, vector<Enemy*>&);
 
 	bool checkTime(float);
