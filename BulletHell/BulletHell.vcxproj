@@ -68,10 +68,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="BulletColl.cpp" />
     <ClCompile Include="BulletHandler.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="EnemyColl.cpp" />
     <ClCompile Include="EnemyHandler.cpp" />
     <ClCompile Include="GameHandler.cpp" />
     <ClCompile Include="GameTimer.cpp" />
@@ -86,10 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
-    <ClInclude Include="BulletColl.h" />
     <ClInclude Include="BulletHandler.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="EnemyColl.h" />
     <ClInclude Include="EnemyHandler.h" />
     <ClInclude Include="GameHandler.h" />
     <ClInclude Include="GameTimer.h" />

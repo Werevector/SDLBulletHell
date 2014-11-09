@@ -5,31 +5,28 @@ BulletHandler::BulletHandler(){
 }
 
 void BulletHandler::RenderBullets(){
-	std::vector<Bullet*> bullets = bColl.GetBulletsAsVector();
 	
-	for(int i = 0; i < bullets.size(); i++){
-			bullets[i]->Draw();
+	for(int i = 0; i < bulletVector.size(); i++){
+			bulletVector[i]->Draw();
 	}
 
 }
 
 void BulletHandler::UpdateBullets(GameTimer& gTimer){
-	std::vector<Bullet*> bullets = bColl.GetBulletsAsVector();
 
-	for(int i = 0; i < bullets.size(); i++){
-			bullets[i]->Update(gTimer);
+	for(int i = 0; i < bulletVector.size(); i++){
+			bulletVector[i]->Update(gTimer);
 			
-			if(bullets[i]->isOutsideBounds()){
-				bullets.erase(bullets.begin() + i);
+			if(bulletVector[i]->isOutsideBounds()){
+				bulletVector.erase(bulletVector.begin() + i);
 			}
 	}
-	std::cout << "  " << bullets.size() << "\n";
+	std::cout << "  " << bulletVector.size() << "\n";
 }
 
 void BulletHandler::AddShotBullet(Bullet bullet){
-	bColl.addBullet(bullet);
 }
 
 std::vector<Bullet*>& BulletHandler::GetBulletPointers(){
-	return bColl.GetBulletsAsPointer();
+	return bulletVector;
 }

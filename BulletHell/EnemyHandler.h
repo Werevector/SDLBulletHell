@@ -1,5 +1,6 @@
 #pragma once
-#include "EnemyColl.h"
+#include <vector>
+#include "Enemy.h"
 
 
 class EnemyHandler{
@@ -7,14 +8,15 @@ class EnemyHandler{
 
 private:
 
-	EnemyColl eColl;
-
 public:
-
+	std::vector<Enemy*> enemyVectors;
+	
 	EnemyHandler();
 	void UpdateEnemies(std::vector<Bullet*>&, GameTimer&);
 	void RenderEnemies();
 	void AddEnemyToGame(Enemy*);
 	std::vector<Enemy*>& GetEnemiesAsPointer();
+
+	
 
 };

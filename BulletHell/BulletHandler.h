@@ -1,13 +1,15 @@
 #pragma once
-#include "BulletColl.h"
+#include <vector>
+#include "Bullet.h"
 
 class BulletHandler{
 
 private:
 
-	BulletColl bColl;
 
 public:
+
+	std::vector<Bullet*> bulletVector;
 
 	BulletHandler();
 	void RenderBullets();
