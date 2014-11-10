@@ -58,3 +58,7 @@ int Bullet::GetCenterX(){
 int Bullet::GetCenterY(){
 	return (bulletPosY+(bHitBox.h/2));
 }
+
+SDL_Rect Bullet::GetHitBox(){
+	return bHitBox;
+}

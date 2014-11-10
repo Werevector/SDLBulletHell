@@ -15,7 +15,7 @@ void SpiralEnemy::Shoot(std::vector<Bullet*>& bulletVectors, GameTimer& eTime){
 
 void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 	
-	if(isSpawned){
+	if(isSpawned && !IsDead()){
 		passedTime = (eTime.TotalTime()-spawnTime);
 		if(GetEnemyCenterY() < Graphics::SCREEN_HEIGHT/2 || passedTime > 10){
 			EnemyMove(eTime.DeltaTime());
@@ -33,7 +33,7 @@ void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 
 
 void SpiralEnemy::Draw(){
-	if(isSpawned){
+	if(isSpawned && !IsDead()){
 		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0xFF, 0xFF ); 
 		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
 	}

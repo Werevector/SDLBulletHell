@@ -14,10 +14,18 @@ Player::Player(){
 
 	playerSpeed = 150;
 
+	isDead = false;
+
 }
 
-void Player::Update(float deltaTime){
-	HandleMovement(deltaTime);
+void Player::Update(GameTimer& pTimer, std::vector<Bullet*>& playerBulletVectors){
+	if(!isDead){	
+		HandleMovement(pTimer.DeltaTime());
+	
+		if(shoot){
+			Shoot(playerBulletVectors, pTimer);
+		}
+	}
 }
 
 void Player::HandleMovement(float deltaTime) {
@@ -47,15 +55,21 @@ void Player::HandleMovement(float deltaTime) {
 		hitbox.x = playerPositionX;
 		printf("moveRight\n");
 	}
+
+	
 	ResetFlags();
 	
 }
 
+void Player::Shoot(std::vector<Bullet*>& playerBulletVectors, GameTimer& pTime){
+	playerBulletVectors.push_back(new PlayerBulletA( GetPlayerCenterX(), GetPlayerCenterY(), pTime.TotalTime(), 1.57 ));
+}
+
 void Player::Draw(){
-
-	SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0xFF, 0xFF ); 
-	SDL_RenderFillRect( Graphics::gRenderer, &hitbox );
-
+	if(!isDead){
+		SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0xFF, 0xFF ); 
+		SDL_RenderFillRect( Graphics::gRenderer, &hitbox );
+	}
 }
 
 void Player::ResetFlags(){
@@ -64,10 +78,6 @@ void Player::ResetFlags(){
 	mLeft=false;
 	mRight=false;
 }
-
-//void Player::Shoot(std::vector<Bullet>& playerBullets, GameTimer pTime){
-//	
-//}
 
 int Player::GetPlayerX(){
 	return playerPositionX;
@@ -83,4 +93,8 @@ int Player::GetPlayerCenterX(){
 
 int Player::GetPlayerCenterY(){
 	return (playerPositionY+(hitbox.h/2));
+}
+
+SDL_Rect Player::GetHitBox(){
+	return hitbox;
 }

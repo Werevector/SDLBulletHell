@@ -1,8 +1,8 @@
 #pragma once
 #include "SDL.h"
 #include "Graphics.h"
-#include "Player.h"
 #include "GameTimer.h"
+#include <iostream>
 
 class Bullet{
 
@@ -28,6 +28,8 @@ public:
 	int GetCenterY();
 
 	bool isOutsideBounds();
+
+	SDL_Rect GetHitBox();
 
 protected:
 

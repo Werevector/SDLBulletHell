@@ -18,5 +18,6 @@ public:
 
 private:
 	GameTimer sTimer;
-
+	std::vector<Enemy*> enemiesList;
+	int Iteration;
 };

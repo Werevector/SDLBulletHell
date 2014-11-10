@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Graphics.h"
 #include <vector>
+#include "Bullet.h"
+#include "PlayerBulletA.h"
 
 
 class Player {
@@ -30,8 +32,11 @@ public:
 	bool mLeft;
 	bool mRight;
 	bool focus;
-
-	void Update(float deltaTime);
+	bool shoot;
+	
+	void Shoot(std::vector<Bullet*>&, GameTimer&);
+	
+	void Update(GameTimer&, std::vector<Bullet*>&);
 	
 	Player();
 	
@@ -41,5 +46,9 @@ public:
 	int GetPlayerY();
 	int GetPlayerCenterX();
 	int GetPlayerCenterY();
+	SDL_Rect GetHitBox();
+	bool isDead;
+
+	
 
 };

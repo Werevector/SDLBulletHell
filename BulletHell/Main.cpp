@@ -75,7 +75,7 @@ void close()
 
 void draw(){
 
-	//Clear screen
+		//Clear screen
 		SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0x00, 0xFF );
 		SDL_RenderClear( Graphics::gRenderer );
 

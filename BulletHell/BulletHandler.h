@@ -9,12 +9,14 @@ private:
 
 public:
 
-	std::vector<Bullet*> bulletVector;
+	std::vector<Bullet*> enemyBulletVector;
+	std::vector<Bullet*> playerBulletVector;
 
 	BulletHandler();
 	void RenderBullets();
 	void UpdateBullets(GameTimer&);
 	void AddShotBullet(Bullet);
 	std::vector<Bullet*>& GetBulletPointers();
+	std::vector<Bullet*>& GetPlayerBulletPointers();
 
 };

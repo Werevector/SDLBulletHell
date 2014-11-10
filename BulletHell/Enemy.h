@@ -47,7 +47,7 @@ public:
 	virtual void Draw();
 	virtual void Update(std::vector<Bullet*>&, GameTimer);
 	
-	
+	SDL_Rect GetHitBox();
 
 	int GetEnemyCenterX();
 	int GetEnemyCenterY();

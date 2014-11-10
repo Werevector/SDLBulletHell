@@ -77,6 +77,7 @@
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerBulletA.cpp" />
     <ClCompile Include="PlayerHandler.cpp" />
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="SpiralEnemy.cpp" />
@@ -92,6 +93,7 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerBulletA.h" />
     <ClInclude Include="PlayerHandler.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="SpiralEnemy.h" />

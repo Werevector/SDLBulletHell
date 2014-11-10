@@ -6,7 +6,7 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 	passedTime = 0;
 	spawnTime = 0;
 
-	healthPoints = 10;
+	healthPoints = 50;
 
 	enemyPosX = spawnX;
 	enemyPosY = spawnY;
@@ -30,7 +30,7 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 
 void Enemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 	
-	if(isSpawned){
+	if(isSpawned && !IsDead()){
 		EnemyMove(eTime.DeltaTime());
 		eHitBox.x = enemyPosX;
 		eHitBox.y = enemyPosY;
@@ -41,7 +41,7 @@ void Enemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 }
 
 void Enemy::Draw(){
-	if(isSpawned){
+	if(isSpawned && !IsDead()){
 		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
 		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
 	}
@@ -66,7 +66,7 @@ void Enemy::Despawn(){
 }
 
 void Enemy::Shoot(std::vector<Bullet*>& bulletVectors, GameTimer& eTime){
-	if(isSpawned){
+	if(isSpawned && !IsDead()){
 		bulletVectors.push_back(new Bullet( GetEnemyCenterX(), GetEnemyCenterY(), eTime.TotalTime(), firingAngle ));
 	}
 }
@@ -77,6 +77,10 @@ float Enemy::CalcFiringAngle(float X,float Y){
 
 void Enemy::Damage(int amountOfDamage){
 	healthPoints -= amountOfDamage;
+}
+
+SDL_Rect Enemy::GetHitBox(){
+	return eHitBox;
 }
 
 int Enemy::GetEnemyCenterX(){

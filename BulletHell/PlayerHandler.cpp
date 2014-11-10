@@ -8,7 +8,7 @@ void PlayerHandler::RenderPlayer(){
 	player.Draw();
 }
 
-void PlayerHandler::UpdatePlayer(const Uint8* currentKeyStates, GameTimer& gTimer){
+void PlayerHandler::UpdatePlayer(const Uint8* currentKeyStates, GameTimer& gTimer, std::vector<Bullet*>& playerBulletVector){
 	
 	if(currentKeyStates[ SDL_SCANCODE_UP ]){
 		player.mUpp = true;
@@ -28,8 +28,22 @@ void PlayerHandler::UpdatePlayer(const Uint8* currentKeyStates, GameTimer& gTime
 		player.focus = false;
 	}
 
-	player.Update(gTimer.DeltaTime());
+	if(currentKeyStates[ SDL_SCANCODE_Z ]){
+		player.shoot = true;
+	}else{
+		player.shoot = false;
+	}
 
+	player.Update(gTimer, playerBulletVector);
+
+}
+
+SDL_Rect PlayerHandler::GetPlayerHitBox(){
+	return player.GetHitBox();
+}
+
+void PlayerHandler::SetPlayerDead(){
+	player.isDead = true;
 }
 
 

@@ -12,7 +12,7 @@ void YSpeedBullet::Draw(){
 	SDL_RenderFillRect( Graphics::gRenderer, &bHitBox );
 }
 
-void YSpeedBullet::Update(GameTimer& bTime, Player& player){
+void YSpeedBullet::Update(GameTimer& bTime){
 	
 	passedTime = (bTime.TotalTime()-spawnTime);
 	
