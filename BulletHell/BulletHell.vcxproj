@@ -81,6 +81,7 @@
     <ClCompile Include="PlayerHandler.cpp" />
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="SpiralEnemy.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="YSpeedBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +98,7 @@
     <ClInclude Include="PlayerHandler.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="SpiralEnemy.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="YSpeedBullet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

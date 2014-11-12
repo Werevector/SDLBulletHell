@@ -11,8 +11,8 @@ class Player {
 
 private:
 
-	int playerPositionX;
-	int playerPositionY;
+	float playerPositionX;
+	float playerPositionY;
 
 	float playerSpeed;
 
@@ -23,6 +23,8 @@ private:
 	
 	void ResetFlags();
 	void HandleMovement(float deltaTime);
+
+	float lastShot;
 
 public:
 	

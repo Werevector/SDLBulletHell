@@ -11,11 +11,9 @@ Schedule::Schedule(){
 
 void Schedule::AddEnemiesToGame(vector<Enemy*>& enemyVectors){
 
-	/*enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/1.5),0,0,400, 2));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 4));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/2),0,0,400, 5));*/
 	enemiesList.push_back(new SpiralEnemy((Graphics::SCREEN_WIDTH/4),0,0,400, 1));
 	enemiesList.push_back(new SpiralEnemy((Graphics::SCREEN_WIDTH/1.5),0,0,400, 2));
+
 	
 
 }

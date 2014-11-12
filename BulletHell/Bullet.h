@@ -35,6 +35,6 @@ protected:
 
 	void Move(float, float);
 	float angle;
-	static const int HITBOX_SIZE = 5;
+	int HITBOX_SIZE;
 
 };

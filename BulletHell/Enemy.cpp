@@ -6,7 +6,7 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 	passedTime = 0;
 	spawnTime = 0;
 
-	healthPoints = 50;
+	healthPoints = 10;
 
 	enemyPosX = spawnX;
 	enemyPosY = spawnY;

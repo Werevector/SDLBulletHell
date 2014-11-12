@@ -1,6 +1,9 @@
 #include "Bullet.h"
 
 Bullet::Bullet(float sX, float sY, float time, float targetAngle){
+	
+	HITBOX_SIZE = 5;
+
 	bulletPosX = sX-(HITBOX_SIZE/2);
 	bulletPosY = sY-(HITBOX_SIZE/2);
 

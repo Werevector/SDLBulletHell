@@ -2,8 +2,18 @@
 
 PlayerBulletA::PlayerBulletA(float sX, float sY, float time, float targetAngle) : Bullet(sX,sY,time,targetAngle){
 
-	bVelocX = 2000;
-	bVelocY = 2000;
+	HITBOX_SIZE = 10;
+
+	bulletPosX = sX-(HITBOX_SIZE/2);
+	bulletPosY = sY-(HITBOX_SIZE/2);
+
+	bHitBox.x = bulletPosX;
+	bHitBox.y = bulletPosY;
+	bHitBox.h = HITBOX_SIZE;
+	bHitBox.w = HITBOX_SIZE;
+
+	bVelocX = 1000;
+	bVelocY = 1000;
 
 }
 

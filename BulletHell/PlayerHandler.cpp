@@ -12,13 +12,17 @@ void PlayerHandler::UpdatePlayer(const Uint8* currentKeyStates, GameTimer& gTime
 	
 	if(currentKeyStates[ SDL_SCANCODE_UP ]){
 		player.mUpp = true;
-	}else if (currentKeyStates[ SDL_SCANCODE_DOWN ]){
+	}
+	
+	if (currentKeyStates[ SDL_SCANCODE_DOWN ]){
 		player.mDown = true;
 	}
 
 	if (currentKeyStates[ SDL_SCANCODE_LEFT ]){
 		player.mLeft = true;
-	}else if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
+	}
+	
+	if (currentKeyStates[ SDL_SCANCODE_RIGHT ]){
 		player.mRight = true;
 	}
 

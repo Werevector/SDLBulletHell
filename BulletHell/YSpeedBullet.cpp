@@ -2,8 +2,8 @@
 
 YSpeedBullet::YSpeedBullet(float sX, float sY, float time, float targetAngle) : Bullet(sX,sY,time,targetAngle){
 
-	bVelocX = 100;
-	bVelocY = 100;
+	bVelocX = 500;
+	bVelocY = 500;
 
 }
 
