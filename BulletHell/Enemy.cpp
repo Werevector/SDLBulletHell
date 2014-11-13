@@ -2,6 +2,8 @@
 
 Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 
+	eTexture.loadFromFile("Textures\\Fairy.png");
+
 	whenToSpawn = when;
 	passedTime = 0;
 	spawnTime = 0;
@@ -21,6 +23,9 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 	eHitBox.y = enemyPosY;
 	eHitBox.w = boxW;
 	eHitBox.h = boxH;
+
+	eRendRect.h = 60;
+	eRendRect.w = 60;
 
 	isSpawned = false;
 
@@ -42,8 +47,9 @@ void Enemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 
 void Enemy::Draw(){
 	if(isSpawned && !IsDead()){
-		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
-		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
+		eTexture.renderFromCenter(GetEnemyCenterX(), GetEnemyCenterY(), &eRendRect );
+		/*SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0x00, 0xFF ); 
+		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );*/
 	}
 }
 

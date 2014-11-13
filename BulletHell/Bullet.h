@@ -3,11 +3,13 @@
 #include "Graphics.h"
 #include "GameTimer.h"
 #include <iostream>
-
+#include "Texture.h"
 class Bullet{
 
 public:
 
+	Texture bTexture;
+	
 	float spawnTime;
 	float passedTime;
 
@@ -17,6 +19,8 @@ public:
 
 	//SDL_Texture *texture;
 	SDL_Rect bHitBox;
+
+	SDL_Rect bRenderRect;
 
 	float bulletPosX;
 	float bulletPosY;

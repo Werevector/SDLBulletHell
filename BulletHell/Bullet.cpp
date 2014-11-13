@@ -2,6 +2,8 @@
 
 Bullet::Bullet(float sX, float sY, float time, float targetAngle){
 	
+	bTexture.loadFromFile("Textures\\GreenBullet.png");
+	
 	HITBOX_SIZE = 5;
 
 	bulletPosX = sX-(HITBOX_SIZE/2);
@@ -17,6 +19,9 @@ Bullet::Bullet(float sX, float sY, float time, float targetAngle){
 	bHitBox.y = bulletPosY;
 	bHitBox.h = HITBOX_SIZE;
 	bHitBox.w = HITBOX_SIZE;
+
+	bRenderRect.h = 20;
+	bRenderRect.w = 20;
 	
 	//-atan2f(player.GetPlayerCenterY()-bulletPosY, player.GetPlayerCenterX()-bulletPosX);
 
@@ -50,8 +55,9 @@ void Bullet::Update(GameTimer& bTime){
 }
 
 void Bullet::Draw(){
-	SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0xFF, 0x00, 0xFF ); 
-	SDL_RenderFillRect( Graphics::gRenderer, &bHitBox );
+	/*SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0xFF, 0x00, 0xFF ); 
+	SDL_RenderFillRect( Graphics::gRenderer, &bHitBox );*/
+	bTexture.renderFromCenter(GetCenterX(), GetCenterY(), &bRenderRect );
 }
 
 int Bullet::GetCenterX(){

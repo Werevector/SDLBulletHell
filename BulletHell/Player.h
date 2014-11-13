@@ -5,7 +5,7 @@
 #include <vector>
 #include "Bullet.h"
 #include "PlayerBulletA.h"
-
+#include "Texture.h"
 
 class Player {
 
@@ -19,12 +19,17 @@ private:
 	//void Shoot(std::vector<Bullet>&, GameTimer);
 
 	SDL_Rect hitbox;
+	SDL_Rect renderQuad;
+
 	int hitboxSize; //side size
 	
 	void ResetFlags();
 	void HandleMovement(float deltaTime);
 
 	float lastShot;
+
+	Texture pTexture;
+
 
 public:
 	

@@ -1,7 +1,7 @@
 #include "Graphics.h"
 
 
-SDL_Renderer* Graphics::gRenderer = NULL;
+SDL_Renderer* Graphics::gRenderer = SDL_CreateRenderer( Graphics::gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
 SDL_Window* Graphics::gWindow = NULL;
 
 //static void InitAll(){

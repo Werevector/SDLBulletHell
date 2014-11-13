@@ -31,7 +31,9 @@ void close();
 //EnemyHandler eHandler;
 //BulletHandler bHandler;
 
-GameHandler gameHandler;
+
+
+
 
 //timer
 GameTimer gTimer;
@@ -50,6 +52,7 @@ void init()
 	Graphics::gWindow = SDL_CreateWindow( "BulletHell", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, Graphics::SCREEN_WIDTH, Graphics::SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 	Graphics::gRenderer = SDL_CreateRenderer( Graphics::gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
 	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+	
 }
 
 bool loadMedia()
@@ -73,7 +76,7 @@ void close()
 	SDL_Quit();
 }
 
-void draw(){
+void draw(GameHandler& gameHandler){
 
 		//Clear screen
 		SDL_SetRenderDrawColor( Graphics::gRenderer, 0x00, 0x00, 0x00, 0xFF );
@@ -85,7 +88,7 @@ void draw(){
 		SDL_RenderPresent( Graphics::gRenderer );
 }
 
-void update(const Uint8* currentKeyStates){
+void update(const Uint8* currentKeyStates, GameHandler& gameHandler){
 
 	/*pHandler.UpdatePlayer(currentKeyStates, gTimer);
 	eHandler.UpdateEnemies(gTimer);
@@ -106,6 +109,7 @@ int main( int argc, char* args[] ) {
 	SDL_Event event;
 	gTimer.Reset();
 
+	GameHandler gameHandler;
 
 	while( !quit )
 	{
@@ -116,13 +120,13 @@ int main( int argc, char* args[] ) {
 		}//EventWhile
 
 		const Uint8* currentKeyStates = SDL_GetKeyboardState( NULL );
-		update(currentKeyStates);
+		update(currentKeyStates, gameHandler );
 
 		gTimer.Tick();
 		cout << gTimer.TotalTime() << "";
 
 		//draw to the screen
-		draw();
+		draw( gameHandler );
 
 	}//GameLoop
 

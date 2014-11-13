@@ -4,13 +4,15 @@ PlayerBulletA::PlayerBulletA(float sX, float sY, float time, float targetAngle) 
 
 	HITBOX_SIZE = 10;
 
-	bulletPosX = sX-(HITBOX_SIZE/2);
-	bulletPosY = sY-(HITBOX_SIZE/2);
+	
 
 	bHitBox.x = bulletPosX;
 	bHitBox.y = bulletPosY;
 	bHitBox.h = HITBOX_SIZE;
 	bHitBox.w = HITBOX_SIZE;
+
+	bulletPosX = sX-(bHitBox.w/2);
+	bulletPosY = sY-(bHitBox.h/2);
 
 	bVelocX = 1000;
 	bVelocY = 1000;

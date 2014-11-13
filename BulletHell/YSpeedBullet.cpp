@@ -2,15 +2,17 @@
 
 YSpeedBullet::YSpeedBullet(float sX, float sY, float time, float targetAngle) : Bullet(sX,sY,time,targetAngle){
 
-	bVelocX = 500;
-	bVelocY = 500;
+	bTexture.loadFromFile("Textures\\YspeedBullet.png");
+
+	bVelocX = 300;
+	bVelocY = 300;
 
 }
 
-void YSpeedBullet::Draw(){
-	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0xFF, 0x0D, 0xFF ); 
-	SDL_RenderFillRect( Graphics::gRenderer, &bHitBox );
-}
+//void YSpeedBullet::Draw(){
+//	SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0xFF, 0x0D, 0xFF ); 
+//	SDL_RenderFillRect( Graphics::gRenderer, &bHitBox );
+//}
 
 void YSpeedBullet::Update(GameTimer& bTime){
 	

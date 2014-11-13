@@ -32,9 +32,9 @@ void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
 
 
 
-void SpiralEnemy::Draw(){
-	if(isSpawned && !IsDead()){
-		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0xFF, 0xFF ); 
-		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
-	}
-}
+//void SpiralEnemy::Draw(){
+//	if(isSpawned && !IsDead()){
+//		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0xFF, 0xFF ); 
+//		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
+//	}
+//}

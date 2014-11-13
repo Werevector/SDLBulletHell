@@ -3,11 +3,14 @@
 #include "SDL.h"
 #include "Graphics.h"
 #include "Bullet.h"
+#include "Texture.h"
 
 class Enemy{
 
 protected:
 
+	Texture eTexture;
+	
 	static const int HITBOX_SIZE = 20;
 
 	int healthPoints;
@@ -29,6 +32,8 @@ protected:
 	SDL_Rect eHitBox;
 	int boxW;
 	int boxH;
+
+	SDL_Rect eRendRect;
 
 	float firingAngle;
 	

@@ -10,15 +10,25 @@ Schedule::Schedule(){
 }
 
 void Schedule::AddEnemiesToGame(vector<Enemy*>& enemyVectors){
+	//Add enemies to an iterated spawn list
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 1));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/1.5),0,0,400, 1));
 
-	enemiesList.push_back(new SpiralEnemy((Graphics::SCREEN_WIDTH/4),0,0,400, 1));
-	enemiesList.push_back(new SpiralEnemy((Graphics::SCREEN_WIDTH/1.5),0,0,400, 2));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 5));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 5));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 5.5));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 5.5));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 6));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 6));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 6.5));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 6.5));
 
 	
 
 }
 
 void Schedule::checkSpawn(float sTime, vector<Enemy*>& Enemies ){
+	//Checks the current iteration in the spawning list
 	if(Iteration < enemiesList.size()){
 		if(sTime > enemiesList[Iteration]->whenToSpawn){
 			Enemies.push_back(enemiesList[Iteration]);
@@ -26,6 +36,8 @@ void Schedule::checkSpawn(float sTime, vector<Enemy*>& Enemies ){
 		}
 	}
 
+	//Checking for time to spawn, might be redundant.
+	//Also checks despawn, could be reworked.
 	for(int i = 0; i < Enemies.size(); i++){
 		
 		if(sTime > Enemies[i]->whenToSpawn){
@@ -39,7 +51,3 @@ void Schedule::checkSpawn(float sTime, vector<Enemy*>& Enemies ){
 	}
 
 }
-
-//bool Schedule::checkTime(float sTime){
-//	
-//}
