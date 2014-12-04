@@ -4,6 +4,7 @@
 #include "Graphics.h"
 #include "Bullet.h"
 #include "Texture.h"
+#include "Player.h";
 
 class Enemy{
 
@@ -16,6 +17,8 @@ protected:
 	int healthPoints;
 
 	bool isSpawned;
+
+	int lastShot;
 
 	float spawnTime;
 	float passedTime;
@@ -50,7 +53,7 @@ public:
 	Enemy(int, int, float, float, float);
 	
 	virtual void Draw();
-	virtual void Update(std::vector<Bullet*>&, GameTimer);
+	virtual void Update(std::vector<Bullet*>&, Player& player, GameTimer);
 	
 	SDL_Rect GetHitBox();
 

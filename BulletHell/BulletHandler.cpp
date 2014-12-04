@@ -22,9 +22,12 @@ void BulletHandler::UpdateBullets(GameTimer& gTimer){
 			enemyBulletVector[i]->Update(gTimer);
 			
 			if(enemyBulletVector[i]->isOutsideBounds()){
+				/*enemyBulletVector[i] = enemyBulletVector[enemyBulletVector.size()];
+				enemyBulletVector.pop_back();*/
 				enemyBulletVector.erase(enemyBulletVector.begin() + i);
 			}
 	}
+
 
 	for(int i = 0; i < playerBulletVector.size(); i++){
 			playerBulletVector[i]->Update(gTimer);

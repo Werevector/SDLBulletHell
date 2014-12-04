@@ -99,6 +99,9 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PhEnemy.cpp">
+      <Filter>Source Files\Objects\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameTimer.h">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhEnemy.h">
+      <Filter>Header Files\Objects\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

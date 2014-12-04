@@ -4,8 +4,8 @@ YSpeedBullet::YSpeedBullet(float sX, float sY, float time, float targetAngle) : 
 
 	bTexture.loadFromFile("Textures\\YspeedBullet.png");
 
-	bVelocX = 300;
-	bVelocY = 300;
+	bVelocX = 500;
+	bVelocY = 500;
 
 }
 
@@ -18,8 +18,8 @@ void YSpeedBullet::Update(GameTimer& bTime){
 	
 	passedTime = (bTime.TotalTime()-spawnTime);
 	
-	float x = cos(angle)*(bVelocX)*bTime.DeltaTime();
-	float y = -sin(angle)*(bVelocX)*bTime.DeltaTime();
+	float x = bulletPosX + cos(angle)*(bVelocX)*bTime.DeltaTime();
+	float y = bulletPosY + -sin(angle)*(bVelocX)*bTime.DeltaTime();
 	Move(x, y);
 
 }

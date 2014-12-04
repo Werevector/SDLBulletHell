@@ -33,6 +33,8 @@ private:
 
 public:
 	
+	
+
 	//keypress flags
 	bool mUpp;
 	bool mDown;

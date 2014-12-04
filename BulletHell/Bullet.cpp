@@ -12,8 +12,8 @@ Bullet::Bullet(float sX, float sY, float time, float targetAngle){
 	spawnTime = time;
 	passedTime = 0;
 
-	bVelocX = 100;
-	bVelocY = 100;
+	bVelocX = 1000;
+	bVelocY = 1000;
 	
 	bHitBox.x = bulletPosX;
 	bHitBox.y = bulletPosY;
@@ -22,34 +22,56 @@ Bullet::Bullet(float sX, float sY, float time, float targetAngle){
 
 	bRenderRect.h = 20;
 	bRenderRect.w = 20;
-	
-	//-atan2f(player.GetPlayerCenterY()-bulletPosY, player.GetPlayerCenterX()-bulletPosX);
 
 	angle = targetAngle;
 }
 
 void Bullet::Move(float x, float y){
-	bulletPosX += x;
-	bulletPosY += y;
+	bulletPosX = x;
+	bulletPosY = y;
 
 	bHitBox.x = bulletPosX;
 	bHitBox.y = bulletPosY;
 }
 
 bool Bullet::isOutsideBounds(){
+	
 	bool result = false;
 	if(GetCenterX() >= Graphics::SCREEN_WIDTH + 50 || GetCenterY() >= Graphics::SCREEN_HEIGHT + 50 || GetCenterY() <= -50 || GetCenterX() <= -50){
 		result = true;
 	}
 	return result;
+
 }
 
 void Bullet::Update(GameTimer& bTime){
 	
 	passedTime = (bTime.TotalTime()-spawnTime);
 	
-	float x = cos(angle)*bVelocX*bTime.DeltaTime();
-	float y = -sin(angle)*bVelocY*bTime.DeltaTime();
+	//Creating vectors
+	float VectorLength = 0;
+	float vectorX = 1;
+	float vectorY = 1;
+
+	//Find vector length with pytagoras
+	VectorLength = sqrt((vectorX * vectorX) + (vectorY * vectorY));
+
+	//Normalise vectors
+	if(VectorLength != 0){
+		vectorX /= VectorLength;
+		vectorY /= VectorLength;
+	}
+
+	/*float x = cos(angle)*vectorX*bTime.DeltaTime();
+	float y = -sin(angle)*vectorY*bTime.DeltaTime();*/
+	
+	vectorX *= cos(angle)*bVelocX;
+	vectorY *= -sin(angle)*bVelocY;
+
+	float x = bulletPosX + vectorX*bTime.DeltaTime();
+	float y = bulletPosY + vectorY*bTime.DeltaTime();
+	
+	
 	Move(x, y);
 
 }

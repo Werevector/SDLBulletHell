@@ -11,18 +11,17 @@ Schedule::Schedule(){
 
 void Schedule::AddEnemiesToGame(vector<Enemy*>& enemyVectors){
 	//Add enemies to an iterated spawn list
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 1));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/1.5),0,0,400, 1));
+	/*enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 1));
+	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/1.5),0,0,400, 1));*/
 
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 5));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 5));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 5.5));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 5.5));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 6));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 6));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4),0,0,400, 6.5));
-	enemiesList.push_back(new Enemy((Graphics::SCREEN_WIDTH/4.5),0,0,400, 6.5));
+	
+	enemiesList.push_back(new PhEnemy((0+40),0,0,100, 1));
+	enemiesList.push_back(new PhEnemy((0+70),0,0,100, 1));
 
+	enemiesList.push_back(new SpiralEnemy(Graphics::SCREEN_WIDTH/2,0,0,500, 3));
+
+	
+	//enemiesList.push_back(new SpiralEnemy(Graphics::SCREEN_WIDTH/2,0,0,100, 3));
 	
 
 }

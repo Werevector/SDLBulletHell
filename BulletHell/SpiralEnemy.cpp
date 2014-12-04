@@ -1,7 +1,8 @@
 #include "SpiralEnemy.h"
 
 SpiralEnemy::SpiralEnemy(int spawnX, int spawnY, float vX, float vY, float when) : Enemy(spawnX,spawnY,vX,vY,when){
-	
+	eVelocX = vX;
+	eVelocY = vY;
 }
 
 void SpiralEnemy::Shoot(std::vector<Bullet*>& bulletVectors, GameTimer& eTime){
@@ -13,7 +14,7 @@ void SpiralEnemy::Shoot(std::vector<Bullet*>& bulletVectors, GameTimer& eTime){
 	}
 }
 
-void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
+void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, Player& player, GameTimer eTime){
 	
 	if(isSpawned && !IsDead()){
 		passedTime = (eTime.TotalTime()-spawnTime);

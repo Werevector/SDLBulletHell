@@ -8,7 +8,9 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 	passedTime = 0;
 	spawnTime = 0;
 
-	healthPoints = 10;
+	healthPoints = 1;
+
+	lastShot = 0;
 
 	enemyPosX = spawnX;
 	enemyPosY = spawnY;
@@ -33,7 +35,7 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 
 }
 
-void Enemy::Update(std::vector<Bullet*>& bulletVectors, GameTimer eTime){
+void Enemy::Update(std::vector<Bullet*>& bulletVectors, Player& player, GameTimer eTime){
 	
 	if(isSpawned && !IsDead()){
 		EnemyMove(eTime.DeltaTime());

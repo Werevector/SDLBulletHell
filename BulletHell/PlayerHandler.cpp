@@ -50,5 +50,9 @@ void PlayerHandler::SetPlayerDead(){
 	player.isDead = true;
 }
 
+Player& PlayerHandler::GetPlayerPointer(){
+	return player;
+}
+
 
 

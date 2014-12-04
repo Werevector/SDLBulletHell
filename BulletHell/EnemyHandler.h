@@ -12,7 +12,7 @@ public:
 	std::vector<Enemy*> enemyVectors;
 	
 	EnemyHandler();
-	void UpdateEnemies(std::vector<Bullet*>&, GameTimer&);
+	void UpdateEnemies(std::vector<Bullet*>&, Player& player, GameTimer&);
 	void RenderEnemies();
 	void AddEnemyToGame(Enemy*);
 	std::vector<Enemy*>& GetEnemiesAsPointer();

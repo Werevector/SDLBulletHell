@@ -21,4 +21,6 @@ public:
 
 	void SetPlayerDead();
 
+	Player& GetPlayerPointer();
+
 };

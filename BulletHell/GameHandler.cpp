@@ -6,7 +6,7 @@ GameHandler::GameHandler(){
 
 void GameHandler::UpdateAll(GameTimer& gTimer, const Uint8* currentKeyStates){
 	bHandler.UpdateBullets(gTimer);
-	eHandler.UpdateEnemies(bHandler.GetBulletPointers(), gTimer);
+	eHandler.UpdateEnemies(bHandler.GetBulletPointers(), pHandler.GetPlayerPointer(), gTimer);
 	pHandler.UpdatePlayer(currentKeyStates, gTimer, bHandler.GetPlayerBulletPointers());
 	
 	gSched.checkSpawn(gTimer.TotalTime(), eHandler.GetEnemiesAsPointer());
@@ -22,13 +22,17 @@ void GameHandler::RenderAll(){
 }
 
 void GameHandler::PlayerVsEnemyColl(std::vector<Bullet*>& playerBullets, std::vector<Enemy*>& EnemyVector){
+	
+	int pBsize = playerBullets.size();
+
 	for(int i = 0; i < EnemyVector.size(); i++){
-		for(int j = 0; j < playerBullets.size(); j++){
+		
+		for(int j = 0; j < playerBullets.size() ; j++){
 
 			if( IsColl(EnemyVector[i]->GetHitBox(), playerBullets[j]->GetHitBox()) ){
 				EnemyVector[i]->Damage(1);
-				playerBullets.erase(playerBullets.begin() + i);
-
+				playerBullets.erase(playerBullets.begin() + j);
+		
 			}
 		}
 	}

@@ -12,14 +12,15 @@ void EnemyHandler::RenderEnemies(){
 
 }
 
-void EnemyHandler::UpdateEnemies(std::vector<Bullet*>& bulletVectors, GameTimer& gTimer){
+void EnemyHandler::UpdateEnemies(std::vector<Bullet*>& bulletVectors, Player& player, GameTimer& gTimer){
 
 	for(int i = 0; i < enemyVectors.size(); i++){
-			enemyVectors[i]->Update(bulletVectors, gTimer);
+			enemyVectors[i]->Update(bulletVectors, player, gTimer);
 	}
 	for(int i = 0; i < enemyVectors.size(); i++){
 		if(enemyVectors[i]->IsDead()){
 			enemyVectors.erase(enemyVectors.begin() + i);
+			//enemyVectors[i]->Despawn();
 		}
 	}	
 

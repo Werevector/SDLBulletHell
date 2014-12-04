@@ -9,7 +9,7 @@ public:
 	SpiralEnemy(int,int,float,float,float);
 	
 	//void Draw();
-	void Update(std::vector<Bullet*>&, GameTimer);
+	void Update(std::vector<Bullet*>&, Player& player, GameTimer);
 
 protected:
 

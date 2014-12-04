@@ -3,6 +3,7 @@
 #include "Enemy.h"
 #include "SpiralEnemy.h"
 #include <vector>
+#include "PhEnemy.h"
 
 using namespace std;
 
@@ -14,10 +15,10 @@ public:
 	void AddEnemiesToGame(vector<Enemy*>&);
 	void checkSpawn(float, vector<Enemy*>&);
 
-	bool checkTime(float);
-
 private:
+	
 	GameTimer sTimer;
 	std::vector<Enemy*> enemiesList;
 	int Iteration;
+
 };
