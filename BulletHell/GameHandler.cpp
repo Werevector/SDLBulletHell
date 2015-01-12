@@ -1,7 +1,8 @@
 #include "GameHandler.h"
 
 GameHandler::GameHandler(){
-	gSched.AddEnemiesToGame(eHandler.GetEnemiesAsPointer());
+	//gSched.AddEnemiesToGame(eHandler.GetEnemiesAsPointer());
+	StageLoader::loadEnemiesFromStage("Stage1.txt" , eHandler.GetEnemiesAsPointer());
 }
 
 void GameHandler::UpdateAll(GameTimer& gTimer, const Uint8* currentKeyStates){
@@ -12,7 +13,7 @@ void GameHandler::UpdateAll(GameTimer& gTimer, const Uint8* currentKeyStates){
 	gSched.checkSpawn(gTimer.TotalTime(), eHandler.GetEnemiesAsPointer());
 	
 	PlayerVsEnemyColl(bHandler.GetPlayerBulletPointers(), eHandler.GetEnemiesAsPointer());
-	EnemyVsPlayerColl(bHandler.GetBulletPointers(), pHandler.GetPlayerHitBox());
+	//EnemyVsPlayerColl(bHandler.GetBulletPointers(), pHandler.GetPlayerHitBox());
 }
 
 void GameHandler::RenderAll(){

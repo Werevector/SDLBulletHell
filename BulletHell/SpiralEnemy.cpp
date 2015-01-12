@@ -26,16 +26,6 @@ void SpiralEnemy::Update(std::vector<Bullet*>& bulletVectors, Player& player, Ga
 		}
 		eHitBox.x = enemyPosX;
 		eHitBox.y = enemyPosY;
-		//firingAngle += 0.1;
 		
 	}
 }
-
-
-
-//void SpiralEnemy::Draw(){
-//	if(isSpawned && !IsDead()){
-//		SDL_SetRenderDrawColor( Graphics::gRenderer, 0xFF, 0x00, 0xFF, 0xFF ); 
-//		SDL_RenderFillRect( Graphics::gRenderer, &eHitBox );
-//	}
-//}

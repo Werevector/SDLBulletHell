@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>R:\Programmering\VS10 dev libraries\SDL2_image-2.0.0\include;R:\Programmering\VS10 dev libraries\SDL2_ttf-2.0.12\include;R:\Programmering\VS10 dev libraries\SDL2-2.0.3\include;$(IncludePath)</IncludePath>
+    <IncludePath>R:\Programmering\VS10 dev libraries\SDL2_image-2.0.0\include;R:\Programmering\VS10 dev libraries\SDL2_ttf-2.0.12\include;R:\Programmering\VS10 dev libraries\SDL2-2.0.3\include;R:\Programmering\VS10 dev libraries\Json\rapidjson-master\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>R:\Programmering\VS10 dev libraries\SDL2_image-2.0.0\lib\x86;R:\Programmering\VS10 dev libraries\SDL2_ttf-2.0.12\lib\x86;R:\Programmering\VS10 dev libraries\SDL2-2.0.3\lib\x86;$(LibraryPath)</LibraryPath>
@@ -82,6 +82,8 @@
     <ClCompile Include="PlayerHandler.cpp" />
     <ClCompile Include="Schedule.cpp" />
     <ClCompile Include="SpiralEnemy.cpp" />
+    <ClCompile Include="SpreadEnemy.cpp" />
+    <ClCompile Include="StageLoader.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="YSpeedBullet.cpp" />
   </ItemGroup>
@@ -100,6 +102,8 @@
     <ClInclude Include="PlayerHandler.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="SpiralEnemy.h" />
+    <ClInclude Include="SpreadEnemy.h" />
+    <ClInclude Include="StageLoader.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="YSpeedBullet.h" />
   </ItemGroup>

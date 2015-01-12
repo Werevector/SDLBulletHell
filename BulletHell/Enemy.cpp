@@ -31,7 +31,7 @@ Enemy::Enemy(int spawnX, int spawnY, float vX, float vY, float when){
 
 	isSpawned = false;
 
-	firingAngle = CalcFiringAngle(3.14,6);
+	firingAngle = CalcFiringAngle(0,1);
 
 }
 

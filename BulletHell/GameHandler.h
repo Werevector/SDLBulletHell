@@ -3,6 +3,7 @@
 #include "EnemyHandler.h"
 #include "PlayerHandler.h"
 #include "Schedule.h"
+#include "StageLoader.h"
 
 class GameHandler{
 

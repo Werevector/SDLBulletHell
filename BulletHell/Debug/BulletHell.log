@@ -1,12 +1,39 @@
-﻿Build started 05.01.2015 22:28:38.
+﻿Build started 11.01.2015 18:24:36.
      1>Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\BulletHell.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         All outputs are up-to-date.
+         R:\Programmering\Visual Studio 2010\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt BulletHandler.cpp
+         BulletHandler.cpp
+     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(9): warning C4018: '<' : signed/unsigned mismatch
+     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(13): warning C4018: '<' : signed/unsigned mismatch
+     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(21): warning C4018: '<' : signed/unsigned mismatch
+     1>r:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(32): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         All outputs are up-to-date.
+         R:\Programmering\Visual Studio 2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe" /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BulletHell.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
+         Debug\BulletHandler.obj
+         Debug\Enemy.obj
+         Debug\EnemyHandler.obj
+         Debug\GameHandler.obj
+         Debug\GameTimer.obj
+         Debug\Graphics.obj
+         Debug\InputHandler.obj
+         Debug\Main.obj
+         Debug\PhEnemy.obj
+         Debug\Player.obj
+         Debug\PlayerBulletA.obj
+         Debug\PlayerHandler.obj
+         Debug\Schedule.obj
+         Debug\SpiralEnemy.obj
+         Debug\SpreadEnemy.obj
+         Debug\StageLoader.obj
+         Debug\Texture.obj
+         Debug\YSpeedBullet.obj
+         LINK : R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe not found or not built by the last incremental link; performing full link
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
          BulletHell.vcxproj -> R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe;#1" /manifest Debug\BulletHell.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\BulletHell.unsuccessfulbuild".
          Touching "Debug\BulletHell.lastbuildstate".
@@ -14,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:00.90

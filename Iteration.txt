@@ -19,7 +19,7 @@ BULLET HELL GAME::
 	Different Types of Enemies;	   |
 	Upgrade Bullet Pathing;		   |
 	Different Types of Bullets;    |
-	A Better Schedule File system; | <<-- CURRENT TASK;
+	A Better Schedule File system; |
 	Restructure Code			   |
 -----------------------------------|
 
@@ -29,6 +29,8 @@ BULLET HELL GAME::
 	Implement Enemy Death when health = 0; |
 -------------------------------------------|
 
-	
+::: Enemy behavior needs rework
+::: Maby rework the entire enemy thingymabob
+
 
 	

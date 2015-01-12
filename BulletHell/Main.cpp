@@ -123,7 +123,7 @@ int main( int argc, char* args[] ) {
 		update(currentKeyStates, gameHandler );
 
 		gTimer.Tick();
-		cout << gTimer.TotalTime() << "";
+		cout << gTimer.TotalTime() << "\t";
 
 		//draw to the screen
 		draw( gameHandler );

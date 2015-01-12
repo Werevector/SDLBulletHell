@@ -1,3 +1,4 @@
+#pragma once
 #include "Enemy.h"
 #include "YSpeedBullet.h"
 #include "Bullet.h"
