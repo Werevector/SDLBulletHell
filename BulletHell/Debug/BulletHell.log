@@ -1,17 +1,95 @@
-﻿Build started 05.01.2015 22:28:38.
-     1>Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\BulletHell.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         All outputs are up-to-date.
+﻿Build started 13/02/2015 08:45:35.
+     1>Project "D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         D:\Programmering\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bullet.cpp BulletHandler.cpp Enemy.cpp EnemyHandler.cpp GameHandler.cpp GameTimer.cpp Graphics.cpp InputHandler.cpp Main.cpp PhEnemy.cpp Player.cpp PlayerBulletA.cpp PlayerHandler.cpp Schedule.cpp SpiralEnemy.cpp Texture.cpp YSpeedBullet.cpp
+         YSpeedBullet.cpp
+         Texture.cpp
+         SpiralEnemy.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\spiralenemy.cpp(11): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\spiralenemy.cpp(12): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\spiralenemy.cpp(12): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\spiralenemy.cpp(24): warning C4305: '+=' : truncation from 'double' to 'float'
+         Schedule.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(31): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\schedule.cpp(40): warning C4018: '<' : signed/unsigned mismatch
+         PlayerHandler.cpp
+         PlayerBulletA.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\playerbulleta.cpp(9): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\playerbulleta.cpp(10): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+         Player.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(12): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(13): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(87): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(88): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(98): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(98): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(118): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(122): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(126): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\player.cpp(130): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+         PhEnemy.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\phenemy.cpp(18): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\phenemy.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         Main.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+         InputHandler.cpp
+         Graphics.cpp
+         GameTimer.cpp
+         GameHandler.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\gamehandler.cpp(28): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\gamehandler.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\gamehandler.cpp(42): warning C4018: '<' : signed/unsigned mismatch
+         EnemyHandler.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemyhandler.cpp(9): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemyhandler.cpp(17): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemyhandler.cpp(20): warning C4018: '<' : signed/unsigned mismatch
+         Enemy.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.cpp(34): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.cpp(61): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.cpp(62): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\enemy.cpp(78): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+         BulletHandler.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(9): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(13): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(21): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullethandler.cpp(32): warning C4018: '<' : signed/unsigned mismatch
+         Bullet.cpp
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(18): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(19): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(33): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(34): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(86): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+     1>d:\programmering\c++ workspace\repositories\sdlbullethell\bullethell\bullet.cpp(90): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+         Generating Code...
        Link:
-         All outputs are up-to-date.
-         BulletHell.vcxproj -> R:\Programmering\C++ workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\BulletHell.unsuccessfulbuild".
-         Touching "Debug\BulletHell.lastbuildstate".
-     1>Done Building Project "R:\Programmering\C++ workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (build target(s)).
+         D:\Programmering\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.lib" /MACHINE:X86 Debug\Bullet.obj
+         Debug\BulletHandler.obj
+         Debug\Enemy.obj
+         Debug\EnemyHandler.obj
+         Debug\GameHandler.obj
+         Debug\GameTimer.obj
+         Debug\Graphics.obj
+         Debug\InputHandler.obj
+         Debug\Main.obj
+         Debug\PhEnemy.obj
+         Debug\Player.obj
+         Debug\PlayerBulletA.obj
+         Debug\PlayerHandler.obj
+         Debug\Schedule.obj
+         Debug\SpiralEnemy.obj
+         Debug\Texture.obj
+         Debug\YSpeedBullet.obj
+     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+         BulletHell.vcxproj -> D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\Debug\BulletHell.exe
+     1>Done Building Project "D:\Programmering\C++ Workspace\Repositories\SDLBulletHell\BulletHell\BulletHell.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:10.37
